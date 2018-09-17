@@ -2,15 +2,32 @@ from random import randrange
 
 attacker = []
 defender = []
+qua_att = 0
+qua_def = 0
 lost_att = 0
 lost_def = 0
 min_len_of_dices = 0
 
-for i in range(3):
-	attacker.insert(i, randrange(1, 7))
-	
-for i in range(2):
-	defender.insert(i, randrange(1, 7))
+while not attacker:
+	try:
+		qua_att = int(input('How many units attack:'))
+		if qua_att == 0:
+			qua_att /= 0
+		for i in range(qua_att):
+			attacker.insert(i, randrange(1, 7))
+	except:
+		qua_att = 0
+		
+while not defender:
+	try:
+		qua_def = int(input('How many units defend:'))
+		if qua_def == 0:
+			qua_def /= 0
+		for i in range(qua_def):
+			defender.insert(i, randrange(1, 7))
+	except:
+		qua_def = 0
+
 	
 attacker.sort(reverse=True)
 defender.sort(reverse=True)
