@@ -59,4 +59,3 @@ print('Outcome:')
 print('     Attacker: Lost', lost_att, unit)
 unit = 'units' if lost_def > 1 else 'unit'
 print('     Defender: Lost', lost_def, unit)
-
