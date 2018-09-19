@@ -16,6 +16,8 @@ while (type(a) is int) or (type(a) is float):
 			print('Result:', a * b)
 		elif o == '/':
 			print('Result:', a / b)
+		else:
+			sys.exit()
 	except ValueError:
 		sys.exit()
 	except ZeroDivisionError:
