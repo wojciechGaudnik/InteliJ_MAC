@@ -1,40 +1,37 @@
-alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-word = 'ABCD WIELKA DUPA JAS SALATA'
-word2 = ''
+import sys
 
-long = len(word)
+from HangMan.check_letter import check_l
 
-dashed_word = ''
-for chr in word:
-	if chr != ' ':
-		dashed_word += '_'
-	else:
-		dashed_word += ' '
+try:
+	with open('countries_and_capitals.txt') as f:
+		all_file = []
+		one_line = f.readline()
+		while one_line:
+			all_file.append(one_line[:-1])
+			one_line = f.readline()
+	f.close()
+except IOError:
+	print('Problem with file of words')
+	sys.exit()
+except Exception as other_error:
+	print(Exception.__class__)
+	print(other_error)
+	sys.exit()
 
-print(word)
-print(dashed_word)
+for pair in all_file:
+	print(pair.split(' | '))
 
 
+sys.exit()
+print('Welcome in Hangman')
+answer_l_w = ''
+while answer_l_w != 'l' and answer_l_w != 'w':
+	answer_l_w = input('Will you guess a letter or word? (l or w)')
+	if answer_l_w == 'l':
+		check_l()
+	
 
-b = '$'
-while b:
-	b = input("leter:").capitalize()
-	alphabet = list(alphabet)
-	if b in alphabet:
-		while b in word:
-			word = list(word)
-			dashed_word = list(dashed_word)
-			num = word.index(b)
-			dashed_word[num] = b
-			word[num] = '*'
-		alphabet.remove(b)
-		word = ''.join(word)
-		dashed_word = ''.join(dashed_word)
-		alphabet = ''.join(alphabet)
-		print(word)
-		print(dashed_word)
-		print(alphabet)
-	else:
-		print('Kill')
-
+	
+	
+	
 
