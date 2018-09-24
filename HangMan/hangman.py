@@ -39,3 +39,15 @@ while answer_l_w != 'l' and answer_l_w != 'w' and answer_l_w != 'q':
 	
 	
 
+life = 10
+
+
+def print_hangman():
+	life =- 1
+	if life
+
+
+
+
+
+	
