@@ -1,5 +1,6 @@
 alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 word = 'ABCD WIELKA DUPA JAS SALATA'
+word2 = ''
 
 long = len(word)
 
