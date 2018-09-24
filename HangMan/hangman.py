@@ -1,34 +1,38 @@
 import sys
+import os
 
-from HangMan.check_letter import check_l
+# from HangMan.from_file import random_words
+# from HangMan.one_game import One_Game
+from from_file import random_words
+from one_game import One_Game
 
-try:
-	with open('countries_and_capitals.txt') as f:
-		all_file = []
-		one_line = f.readline()
-		while one_line:
-			all_file.append(one_line[:-1])
-			one_line = f.readline()
-	f.close()
-except IOError:
-	print('Problem with file of words')
-	sys.exit()
-except Exception as other_error:
-	print(Exception.__class__)
-	print(other_error)
-	sys.exit()
+os.system('clear')
 
-for pair in all_file:
-	print(pair.split(' | '))
-
-
-sys.exit()
-print('Welcome in Hangman')
+player = One_Game(random_words('countries_and_capitals.txt'))
 answer_l_w = ''
-while answer_l_w != 'l' and answer_l_w != 'w':
-	answer_l_w = input('Will you guess a letter or word? (l or w)')
+while answer_l_w != 'l' and answer_l_w != 'w' and answer_l_w != 'q':
+	if player.lives <= 0:
+		player = One_Game(random_words('countries_and_capitals.txt'))
+	
+	player.show_progress_hangman()
+	answer_l_w = input('Will you guess a letter or word? (l or w) (q to quit):').lower()
 	if answer_l_w == 'l':
-		check_l()
+		player.guess_the_letter()
+	elif answer_l_w == 'w':
+		player.guess_the_capital()
+	elif answer_l_w == 'q':
+		sys.exit('by by ')
+
+	
+	if player.lives > 0:
+		answer_l_w = ''
+	if player.lives <= 0:
+		answer_l_w = input('If You want quit press q else play again:')
+		
+		
+	
+	
+	
 	
 
 	

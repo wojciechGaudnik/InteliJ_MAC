@@ -1,10 +1,8 @@
 def check_l():
 	alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 	word = 'ABCD WIELKA DUPA JAS SALATA'
-	word2 = ''
-	long = len(word)
-	
 	dashed_word = ''
+	
 	for chr in word:
 		if chr != ' ':
 			dashed_word += '_'

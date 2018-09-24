@@ -1,0 +1,100 @@
+# from HangMan.hangman_graf import Show_hangman
+import os
+
+from hangman_graf import Show_hangman
+
+from timeit import default_timer as timer
+
+class One_Game(object):
+	
+	def __init__(self, words):
+		self.added_leteres = []
+		self.country = words[0]
+		self.capital = list(words[1].upper())
+		self.capital_word = words[1].upper()
+		self.capital_buff = list(words[1].upper())
+		self.dashed_capital = []
+		self.lives = 5
+		self.hag_graf = Show_hangman()
+		self.time_start = timer()
+		self.show_first = True
+		# print('Capitol of {} is ?'.format(self.country))
+		print(self.capital_word)
+		
+		for ans in self.capital:
+			if ans != ' ':
+				self.dashed_capital += '_'
+			else:
+				self.dashed_capital += ' '
+		self.dashed_capital = list(self.dashed_capital)
+		
+	
+	def guess_the_letter(self):
+		ans = input("leter:").capitalize()
+		if ans in self.added_leteres:
+			self.lives -= 1
+			print('patrz co klikasz, juz to prubowales')
+		else:
+			if ans in self.capital:
+				while ans in self.capital:
+					num = self.capital.index(ans)
+					self.dashed_capital[num] = ans
+					self.capital[num] = '*'
+			elif ans in self.capital_buff:
+				print('patrz co klikasz, juz to odgadłes, press anything')
+				input()
+				self.lives -= 1
+			else:
+				self.added_leteres.append(ans)
+				self.lives -= 1
+		if self.lives < 1:
+			self.game_over_lose()
+		if '_' not in self.dashed_capital:
+			self.game_over_win()
+			
+			
+			
+	def guess_the_capital(self):
+		ans = input("Capital:").upper()
+		if ans == self.capital_word:
+			self.game_over_win()
+		else:
+			print('to nie to, press anything')
+			input()
+			self.lives -= 2
+	
+	def show_progress_hangman(self):
+		os.system('clear')
+		if self.show_first or self.lives == 1:
+			self.show_first = False
+			print('Capitol of {} is ?'.format(self.country))
+		else:
+			print('')
+		self.hag_graf.show_hangman(self.lives)
+		print('Odkryte\zakryte literki',''.join(self.dashed_capital))
+		print('Added letters:', ''.join(self.added_leteres))
+		print('Pozostałe życia:', self.lives)
+		time_now_sec = int((timer() - self.time_start) % 60)
+		time_now_min = int((timer() - self.time_start) / 60)
+		print('You gessing: ', end='')
+		print('{:02d}'.format(time_now_min), end='')
+		print(':', end='')
+		print('{:02d}'.format(time_now_sec))
+		# print('You gessing: ' + str(int(time_now_min)) + ':' + str(int(time_now_sec)))
+	
+	def game_over_win(self):
+		self.lives = 0
+		time_now_sec = int((timer() - self.time_start) % 60)
+		time_now_min = int((timer() - self.time_start) / 60)
+		print('You guessed the capital after {} letters. It wtook you {:02d}:{:02d} min:seconds'.
+		      format(len(self.capital_word), time_now_min, time_now_sec))
+		
+	
+	def game_over_lose(self):
+		print('lose')
+	
+	
+	def print_w(self):
+		print(self.lives)
+		print(self.capital)
+		print(self.dashed_capital)
