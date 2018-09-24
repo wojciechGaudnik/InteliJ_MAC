@@ -1,5 +1,5 @@
 alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-word = 'DUPA JAS SALATA'
+word = 'DUPA JAS SALATA papap'
 long = len(word)
 
 dashed_word = ''
