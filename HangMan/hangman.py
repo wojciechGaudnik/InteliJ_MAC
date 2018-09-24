@@ -38,3 +38,15 @@ while b:
 		print('Kill')
 
 
+life = 10
+
+
+def print_hangman():
+	life =- 1
+	if life
+
+
+
+
+
+	
