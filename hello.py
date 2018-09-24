@@ -1,4 +1,4 @@
-#!/usr/bin/python3.6
+# !/usr/bin/python3.6
 import sys
 
 if len(sys.argv) > 1:
