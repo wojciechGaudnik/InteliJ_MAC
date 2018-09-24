@@ -1,4 +1,4 @@
-word = 'dupa jaś sałata'
+word = 'wielka dupa jaś sałata'
 b = 'z'
 long = len(word)
 
