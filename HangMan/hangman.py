@@ -1,5 +1,3 @@
-import sys
-from _cffi_backend import string
 
 word = 'dupa jas salata'
 long = len(word)
