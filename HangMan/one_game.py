@@ -18,7 +18,8 @@ class One_Game(object):
 		self.hag_graf = Show_hangman()
 		self.time_start = timer()
 		self.show_first = True
-		# print('Capitol of {} is ?'.format(self.country))
+		self.guessing_tries = 0
+		
 		print(self.capital_word)
 		
 		for ans in self.capital:
@@ -30,6 +31,7 @@ class One_Game(object):
 		
 	
 	def guess_the_letter(self):
+		self.guessing_tries += 1
 		ans = input("leter:").capitalize()
 		if ans in self.added_leteres:
 			self.lives -= 1
@@ -55,6 +57,7 @@ class One_Game(object):
 			
 			
 	def guess_the_capital(self):
+		self.guessing_tries += 1
 		ans = input("Capital:").upper()
 		if ans == self.capital_word:
 			self.game_over_win()
@@ -88,6 +91,7 @@ class One_Game(object):
 		time_now_min = int((timer() - self.time_start) / 60)
 		print('You guessed the capital after {} letters. It wtook you {:02d}:{:02d} min:seconds'.
 		      format(len(self.capital_word), time_now_min, time_now_sec))
+		
 		
 	
 	def game_over_lose(self):
