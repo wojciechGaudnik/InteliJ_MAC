@@ -34,7 +34,7 @@ class One_Game(object):
 		ans = input("letter:").capitalize()
 		if ans in self.added_leteres:
 			self.lives -= 1
-			print('patrz co klikasz, juz to prubowales')
+			print('You have already tried this letter, be cautious')
 		else:
 			if ans in self.capital:
 				while ans in self.capital:
@@ -42,7 +42,7 @@ class One_Game(object):
 					self.dashed_capital[num] = ans
 					self.capital[num] = '*'
 			elif ans in self.capital_buff:
-				print('patrz co klikasz, juz to odgadłes, press anything')
+				print('This letter was already guessed, press any key')
 				input()
 				self.lives -= 1
 			else:
@@ -61,7 +61,7 @@ class One_Game(object):
 		if ans == self.capital_word:
 			self.game_over_win()
 		else:
-			print('to nie to, press anything')
+			print('It is not correct, press any key')
 			input()
 			self.lives -= 2
 	
@@ -73,12 +73,12 @@ class One_Game(object):
 		# else:
 		# 	print('')
 		self.hag_graf.show_hangman(self.lives)
-		print('Odkryte\zakryte literki',''.join(self.dashed_capital))
+		print('Used letters: ',''.join(self.dashed_capital))
 		print('Added letters:', ''.join(self.added_leteres))
-		print('Pozostałe życia:', self.lives)
+		print('Lives:', self.lives)
 		time_now_sec = int((timer() - self.time_start) % 60)
 		time_now_min = int((timer() - self.time_start) / 60)
-		print('You gessing: ', end='')
+		print('Guessing time: ', end='')
 		print('{:02d}'.format(time_now_min), end='')
 		print(':', end='')
 		print('{:02d}'.format(time_now_sec))
@@ -89,7 +89,7 @@ class One_Game(object):
 		self.show_progress_hangman()
 		time_now_sec = int((timer() - self.time_start) % 60)
 		time_now_min = int((timer() - self.time_start) / 60)
-		print('You guessed the capital after {} letters. It wtook you {:02d}:{:02d} min:seconds'.
+		print('You guessed the capital after {} letters. It took you {:02d}:{:02d} min:seconds'.
 		      format(self.guessing_tries, time_now_min, time_now_sec))
 		
 		

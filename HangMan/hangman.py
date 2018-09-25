@@ -26,13 +26,13 @@ while answer_l_w != 'l' and answer_l_w != 'w' and answer_l_w != 'q':
 	elif answer_l_w == 'w':
 		player.guess_the_capital()
 	elif answer_l_w == 'q':
-		sys.exit('by by ')
+		sys.exit('bye bye ')
 
 	
 	if player.lives > 0:
 		answer_l_w = ''
 	if player.lives <= 0:
-		answer_l_w = input('If You want quit press q else play again:')
+		answer_l_w = input('If You want quit press q, else play again:')
 		
 		
 	
