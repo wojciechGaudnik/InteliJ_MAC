@@ -13,9 +13,6 @@ from from_file_pg import random_words
 from one_game_pg import One_Game
 
 
-#TODO poprawić główną pętle
-#TOD O usnąć pokazywanie za pierwszym razem
-#TOD O nie pokazuje kompletnego hangmana
 
 OnePlayerPG(640, 480).run()
 
