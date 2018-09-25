@@ -20,7 +20,8 @@ class One_Game(object):
 		self.guessing_tries = 0
 		
 		print(self.capital_word)
-		
+		input()
+
 		for ans in self.capital:
 			if ans != ' ':
 				self.dashed_capital += '_'
@@ -85,14 +86,13 @@ class One_Game(object):
 		# print('You gessing: ' + str(int(time_now_min)) + ':' + str(int(time_now_sec)))
 	
 	def game_over_win(self):
-		self.lives = 0
 		self.show_progress_hangman()
+		self.lives = 0
 		time_now_sec = int((timer() - self.time_start) % 60)
 		time_now_min = int((timer() - self.time_start) / 60)
-		print('You guessed the capital after {} letters. It took you {:02d}:{:02d} min:seconds'.
+		print('You guessed the capital after {} tries. It took you {:02d}:{:02d} min:seconds'.
 		      format(self.guessing_tries, time_now_min, time_now_sec))
-		
-		
+				
 	
 	def game_over_lose(self):
 		self.show_progress_hangman()
