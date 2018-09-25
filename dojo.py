@@ -35,36 +35,3 @@ def avr1(lista):
 	return(i_buf)
 
 print(avr1(numbers))
-
-
-	
-	# if type(i) == 'list':
-	# 	for j in i:
-	
-	
-	
-	
-	
-# print(type(numbers[-5]))
-
-
-
-# numbers = [-5, 23, 0, -9, 12, 99, 105, -43]
-# i_buf = numbers[0]
-#
-# for i in numbers:
-# 	if i_buf < i:
-# 		i_buf = i
-#
-# print(i_buf)
-#
-# numbers = [-5, 23, 0, -9, 12, 99, 105, -43]
-# i_buf = 0
-#
-# for i in numbers:
-# 	i_buf += i
-#
-# print(i_buf / len(numbers))
-#
-# 	# i_buf = i [if i < i_buf: i_buf]
-#

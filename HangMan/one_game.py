@@ -1,8 +1,7 @@
 # from HangMan.hangman_graf import Show_hangman
-import os
-
 from hangman_graf import Show_hangman
 
+import os
 from timeit import default_timer as timer
 
 class One_Game(object):
@@ -11,8 +10,8 @@ class One_Game(object):
 		self.added_leteres = []
 		self.country = words[0]
 		self.capital = list(words[1].upper())
-		self.capital_word = words[1].upper()
 		self.capital_buff = list(words[1].upper())
+		self.capital_word = words[1].upper()
 		self.dashed_capital = []
 		self.lives = 5
 		self.hag_graf = Show_hangman()
@@ -32,7 +31,7 @@ class One_Game(object):
 	
 	def guess_the_letter(self):
 		self.guessing_tries += 1
-		ans = input("leter:").capitalize()
+		ans = input("letter:").capitalize()
 		if ans in self.added_leteres:
 			self.lives -= 1
 			print('patrz co klikasz, juz to prubowales')
@@ -87,10 +86,11 @@ class One_Game(object):
 	
 	def game_over_win(self):
 		self.lives = 0
+		self.show_progress_hangman()
 		time_now_sec = int((timer() - self.time_start) % 60)
 		time_now_min = int((timer() - self.time_start) / 60)
 		print('You guessed the capital after {} letters. It wtook you {:02d}:{:02d} min:seconds'.
-		      format(len(self.capital_word), time_now_min, time_now_sec))
+		      format(self.guessing_tries, time_now_min, time_now_sec))
 		
 		
 	

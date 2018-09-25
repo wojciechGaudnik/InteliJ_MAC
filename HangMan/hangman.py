@@ -6,9 +6,13 @@ import os
 from from_file import random_words
 from one_game import One_Game
 
+#TODO poprawić główną pętle
+
+
 os.system('clear')
 
 player = One_Game(random_words('countries_and_capitals.txt'))
+
 answer_l_w = ''
 while answer_l_w != 'l' and answer_l_w != 'w' and answer_l_w != 'q':
 	if player.lives <= 0:
