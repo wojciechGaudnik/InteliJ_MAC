@@ -19,7 +19,8 @@ while (type(a) is int) or (type(a) is float):
 		else:
 			sys.exit()
 	except ValueError:
-		sys.exit()
+		#sys.exit()
+		pass
 	except ZeroDivisionError:
 		print('I give up, dividing by zero ?!')
 	except:
