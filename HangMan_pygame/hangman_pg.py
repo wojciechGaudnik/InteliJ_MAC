@@ -1,21 +1,36 @@
+# !/usr/bin/python3.6
 import sys
 import os
+import pygame
 import pickle
 
 # from HangMan.from_file import random_words
 # from HangMan.one_game import One_Game
-from from_file import random_words
-from one_game import One_Game
+# from HangMan_pygame.hang_pygame import OnePlayerPG
+
+from HangMan_pygame.hang_class_pg import OnePlayerPG
+from from_file_pg import random_words
+from one_game_pg import One_Game
+
 
 #TODO poprawić główną pętle
 #TOD O usnąć pokazywanie za pierwszym razem
 #TOD O nie pokazuje kompletnego hangmana
 
+OnePlayerPG(640, 480).run()
+
+
+sys.exit()
+#TODO--------------------------------------------------------------------------------------------
 os.system('clear')
 
 player = One_Game(random_words('countries_and_capitals.txt'))
-
 answer_l_w = ''
+
+
+print("test")
+sys.exit()
+print("testtt")
 while answer_l_w != 'l' and answer_l_w != 'w' and answer_l_w != 'q':
 	if player.lives <= 0:
 		player = One_Game(random_words('countries_and_capitals.txt'))
@@ -36,7 +51,3 @@ while answer_l_w != 'l' and answer_l_w != 'w' and answer_l_w != 'q':
 		answer_l_w = input('If You want quit press q, else play again:')
 		
 		
-	
-	
-	
-	

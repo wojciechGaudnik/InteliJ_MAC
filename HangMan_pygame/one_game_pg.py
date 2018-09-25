@@ -1,5 +1,5 @@
-# from HangMan.hangman_graf import Show_hangman
-from hangman_graf import Show_hangman
+# from HangMan_pygame.hangman_graf import Show_hangman
+from hangman_graf_pg import Show_hangman
 
 import os
 from timeit import default_timer as timer
