@@ -67,11 +67,11 @@ class One_Game(object):
 	
 	def show_progress_hangman(self):
 		os.system('clear')
-		if self.show_first or self.lives == 1:
-			self.show_first = False
-			print('Capitol of {} is ?'.format(self.country))
-		else:
-			print('')
+		# if self.show_first or self.lives == 1:
+		# 	self.show_first = False
+		# 	print('Capitol of {} is ?'.format(self.country))
+		# else:
+		# 	print('')
 		self.hag_graf.show_hangman(self.lives)
 		print('Odkryte\zakryte literki',''.join(self.dashed_capital))
 		print('Added letters:', ''.join(self.added_leteres))
@@ -95,6 +95,7 @@ class One_Game(object):
 		
 	
 	def game_over_lose(self):
+		self.show_progress_hangman()
 		print('lose')
 	
 	

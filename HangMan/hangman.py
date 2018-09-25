@@ -7,7 +7,8 @@ from from_file import random_words
 from one_game import One_Game
 
 #TODO poprawić główną pętle
-
+#TODO usnąć pokazywanie za pierwszym razem
+#TODO nie pokazuje kompletnego hangmana
 
 os.system('clear')
 
