@@ -7,6 +7,7 @@ import pickle
 from from_file import random_words
 from one_game import One_Game
 
+
 os.system('clear')
 
 player = One_Game(random_words('countries_and_capitals.txt'))
