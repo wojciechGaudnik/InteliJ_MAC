@@ -28,6 +28,7 @@ class OnePlayerPG(object):
 		self.active = False
 		self.input_l_txt = ''
 		self.input_w_txt = ''
+		self.mouse_click_letter = ''
 	
 	
 	def run(self):
@@ -88,17 +89,17 @@ class OnePlayerPG(object):
 			# TODO na eventy !!!!!!!!
 			if (505 < mouse_click_pos[0] < 544) and (405 < mouse_click_pos[1] < 428):
 				self.with_screen = 'ask_w_l'
-			# Sounds
-			# 	self.play_klick()
-			# 	play_sound = pygame.mixer.Sound('Sounds/start.wav')
-			# 	play_sound.play()
-			# 	time.sleep(0.5)
-			# 	play_sound.stop()
+		
 	
 	def draw_ask_w_l(self, mouse_click_pos):
 		if self.with_screen == 'ask_w_l':
 			# Graphhics
 			self.background.blit(self.background_image, (0, 0))
+			if self.mouse_click_letter:
+				self.player.guess_the_letter(self.mouse_click_letter)
+				self.mouse_click_letter = ''
+			
+			
 			self.draw_alphabet()
 			progress = self.player.show_progress_hangman()
 			y = 330
@@ -183,20 +184,24 @@ class OnePlayerPG(object):
 			if x > 550:
 				x = 320
 				y += 40
-				self.alphabet_box.update({char: pygame.Rect(x, y, 40, 33)})
+				if char not in self.player.added_leteres:
+					self.alphabet_box.update({char: pygame.Rect(x, y, 40, 33)})
 			else:
-				self.alphabet_box.update({char: pygame.Rect(x, y, 40, 33)})
+				if char not in self.player.added_leteres:
+					self.alphabet_box.update({char: pygame.Rect(x, y, 40, 33)})
 				x += 50
 		
 		self.alphabet_surface = {}
 		file_name = 'Images/{}.png'
 		for char in alphabet:
-			self.alphabet_surface.update({char: pygame.image.load(file_name.format(char))})
+			if char not in self.player.added_leteres:
+				self.alphabet_surface.update({char: pygame.image.load(file_name.format(char))})
 			
 		# Graphics
 		self.background.blit(self.background_image, (0, 0))
 		for char in alphabet:
-			self.background.blit(self.alphabet_surface[char], self.alphabet_box[char])
+			if char not in self.player.added_leteres:
+				self.background.blit(self.alphabet_surface[char], self.alphabet_box[char])
 		
 		
 	def play_klick(self, sound = 'Sounds/start.wav'):

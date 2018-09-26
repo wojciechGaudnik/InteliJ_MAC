@@ -34,12 +34,13 @@ class One_Game(object):
 		self.dashed_capital = list(self.dashed_capital)
 		
 	
-	def guess_the_letter(self):
+	def guess_the_letter(self, letter):
 		self.guessing_tries += 1
-		ans = input("letter:").capitalize()
+		# ans = input("letter:").capitalize()
+		ans = letter
 		if ans in self.added_leteres:
 			self.lives -= 1
-			print('You have already tried this letter, be cautious')
+			# print('You have already tried this letter, be cautious')
 		else:
 			if ans in self.capital:
 				while ans in self.capital:
@@ -47,16 +48,18 @@ class One_Game(object):
 					self.dashed_capital[num] = ans
 					self.capital[num] = '*'
 			elif ans in self.capital_buff:
-				print('This letter was already guessed, press any key')
-				input()
+				# print('This letter was already guessed, press any key')
+				# input()
 				self.lives -= 1
 			else:
 				self.added_leteres.append(ans)
 				self.lives -= 1
 		if self.lives < 1:
-			self.game_over_lose()
+			# self.game_over_lose()
+			return 'lose'
 		if '_' not in self.dashed_capital:
-			self.game_over_win()
+			# self.game_over_win()
+			return 'win'
 			
 			
 			
@@ -71,32 +74,12 @@ class One_Game(object):
 			self.lives -= 2
 	
 	def show_progress_hangman(self):
-		# os.system('clear')
-		# if self.show_first or self.lives == 1:
-		# 	self.show_first = False
-		# 	print('Capitol of {} is ?'.format(self.country))
-		# else:
-		# 	print('')
-		
-		# self.hag_graf.show_hangman(self.lives)
-		
-		
-		# print('Capital: ',''.join(self.dashed_capital))
-		# print('Used letters:', ''.join(self.added_leteres))
-		# print('Lives:', self.lives)
 		time_now_sec = int((timer() - self.time_start) % 60)
 		time_now_min = int((timer() - self.time_start) / 60)
-		# print('Guessing time: {:02d} : {:02d}'.format(time_now_min, time_now_sec))
-		
-		# print('Guessing time: ', end='')
-		# print('{:02d}'.format(time_now_min), end='')
-		# print(':', end='')
-		# print('{:02d}'.format(time_now_sec))
-		# print('You gessing: ' + str(int(time_now_min)) + ':' + str(int(time_now_sec)))
 		
 		show_progress = []
 		show_progress.append('Capital: ' + ''.join(self.dashed_capital))
-		show_progress.append('Used letters:' + ''.join(self.added_leteres))
+		# show_progress.append('Used letters:' + ''.join(self.added_leteres))
 		show_progress.append('Lives:' + str(self.lives))
 		show_progress.append(''.join('Guessing time: {:02d} : {:02d}'.format(time_now_min, time_now_sec)))
 		return show_progress
