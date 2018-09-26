@@ -23,13 +23,29 @@ class OnePlayerPG(object):
 		pygame.mixer.music.set_volume(0.1)
 		pygame.mixer.music.play(-1, 0.0)
 		
+		# Operators
 		self.mouse_pos_click = [0, 0]
 		self.with_screen = 'start'
-		self.active = False
-		self.input_l_txt = ''
-		self.input_w_txt = ''
 		self.mouse_click_letter = ''
+		# self.active = False
+		# self.input_l_txt = ''
+		# self.input_w_txt = ''
 	
+		# Inbox
+		self.input_box = pygame.Rect(350, 400, 140, 32)
+		self.font = pygame.font.Font(None, 32)
+		self.text = ''
+		self.color_inactive = pygame.Color('lightskyblue3')
+		self.color_active = pygame.Color('dodgerblue2')
+		self.color = self.color_inactive
+		self.active = True
+		
+		# self.txt_surface = self.font.render(self.text, True, self.color)
+		# Resize the box if the text is too long.
+		# width = max(200, self.txt_surface.get_width() + 10)
+		# self.input_box.w = width
+		# self.background.blit(self.txt_surface, (self.input_box.x + 5, self.input_box.y + 5))
+		# pygame.draw.rect(self.background, self.color, self.input_box, 2)
 	
 	def run(self):
 		running = True
@@ -40,8 +56,16 @@ class OnePlayerPG(object):
 				elif event.type == pygame.KEYDOWN:
 					if event.key == pygame.K_ESCAPE:
 						running = False
-					else:
-						self.input_l_txt = event.unicode
+					# else:
+					# 	self.input_l_txt = event.unicode
+					if self.active:
+						if event.key == pygame.K_RETURN:
+							print(self.text)
+							self.text = ''
+						elif event.key == pygame.K_BACKSPACE:
+							self.text = self.text[:-1]
+						else:
+							self.text += event.unicode
 				elif event.type == pygame.MOUSEBUTTONDOWN:
 					self.mouse_pos_click = event.pos #TODO patrz linijka z TODO evanty
 					if self.with_screen == 'ask_w_l':
@@ -50,6 +74,11 @@ class OnePlayerPG(object):
 								self.mouse_click_letter = char.upper()
 								self.__play_klick()
 								# print(self.mouse_click_letter)
+					if self.input_box.collidepoint(event.pos):
+						self.active = not self.active
+					else:
+						self.active = False
+					self.color = self.color_active if self.active else self.color_inactive
 					
 					
 					# if self.with_screen == 'ask_w_l' and self.a_box.collidepoint(event.pos):
@@ -107,10 +136,15 @@ class OnePlayerPG(object):
 				self.with_screen = 'lose'
 				
 			# HangMan Grapfhics
-			# print('test')
 			self.__draw_hangman(self.player.lives)
-			# hang_man = pygame.image.load('Images/{}.png'.format(self.player.lives))  # .convert()
-			# self.background.blit(hang_man, (30, 50))
+			
+			# Whole Word
+			self.txt_surface = self.font.render(self.text, True, self.color)
+			width = max(200, self.txt_surface.get_width() + 10)
+			self.input_box.w = width
+			self.background.blit(self.txt_surface, (self.input_box.x + 5, self.input_box.y + 5))
+			pygame.draw.rect(self.background, self.color, self.input_box, 2)
+			
 	
 	def draw_game_over(self, mouse_click_pos):
 		if self.with_screen == 'lose':
@@ -173,6 +207,8 @@ class OnePlayerPG(object):
 		play_sound.stop()
 		
 	def __draw_hangman(self, lives):
+		if self.player.lives <= 1:
+			print('podpowiedz')
 		hang_man = pygame.image.load('Images/{}.png'.format(lives)) #.convert()
 		self.background.blit(hang_man, (30, 100))
 
