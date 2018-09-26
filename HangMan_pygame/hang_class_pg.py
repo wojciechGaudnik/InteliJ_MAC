@@ -47,6 +47,7 @@ class OnePlayerPG(object):
 						for char in self.alphabet_box:
 							if self.alphabet_box[char].collidepoint(event.pos):
 								self.mouse_click_letter = char
+								self.play_klick()
 								print(self.mouse_click_letter)
 					
 					
@@ -74,7 +75,6 @@ class OnePlayerPG(object):
 	
 	def draw_start(self, mouse_click_pos):
 		if self.with_screen == 'start':
-			
 			self.player = One_Game(random_words('countries_and_capitals.txt'))
 			
 			# Graphhics
@@ -89,17 +89,23 @@ class OnePlayerPG(object):
 			if (505 < mouse_click_pos[0] < 544) and (405 < mouse_click_pos[1] < 428):
 				self.with_screen = 'ask_w_l'
 			# Sounds
-				play_sound = pygame.mixer.Sound('Sounds/start.wav')
-				play_sound.play()
-				time.sleep(0.5)
-				play_sound.stop()
+			# 	self.play_klick()
+			# 	play_sound = pygame.mixer.Sound('Sounds/start.wav')
+			# 	play_sound.play()
+			# 	time.sleep(0.5)
+			# 	play_sound.stop()
 	
 	def draw_ask_w_l(self, mouse_click_pos):
 		if self.with_screen == 'ask_w_l':
 			# Graphhics
 			self.background.blit(self.background_image, (0, 0))
 			self.draw_alphabet()
-		
+			progress = self.player.show_progress_hangman()
+			y = 330
+			for line in progress:
+				self.draw_text(line, 10, y, 200, 200, 200)
+				y += 30
+			self.draw_text('_____________________', 10, y, 200, 200, 200)
 		# w_surface = pygame.image.load('Images/w_button.png')
 		# l_surface = pygame.image.load('Images/l_button.png')
 		# # a_surface = pygame.image.load('Images/a.png')
@@ -193,4 +199,8 @@ class OnePlayerPG(object):
 			self.background.blit(self.alphabet_surface[char], self.alphabet_box[char])
 		
 		
-	
+	def play_klick(self, sound = 'Sounds/start.wav'):
+		play_sound = pygame.mixer.Sound(sound)
+		play_sound.play()
+		time.sleep(0.5)
+		play_sound.stop()
