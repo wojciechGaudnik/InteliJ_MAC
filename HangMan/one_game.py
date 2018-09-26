@@ -1,5 +1,5 @@
 # from HangMan.hangman_graf import Show_hangman
-# from hangman_graf import Show_hangman
+from hangman_graf import Show_hangman
 
 import os
 from timeit import default_timer as timer
@@ -16,7 +16,7 @@ class One_Game(object):
 		self.capital_word = words[1].upper()
 		self.dashed_capital = []
 		self.lives = 5
-		# self.hag_graf = Show_hangman()
+		self.hag_graf = Show_hangman()
 		self.time_start = timer()
 		self.show_first = True
 		self.guessing_tries = 0
@@ -31,7 +31,7 @@ class One_Game(object):
 				self.dashed_capital += '_'
 			else:
 				self.dashed_capital += ' '
-		self.dashed_capital = list(self.dashed_capital)
+		self.dashed_capital = list(self.dashed_capital) # DLACZEGO?
 		
 	
 	def guess_the_letter(self):
@@ -72,15 +72,15 @@ class One_Game(object):
 	
 	def show_progress_hangman(self):
 		os.system('clear')
-		# if self.show_first or self.lives == 1:
-		# 	self.show_first = False
-		# 	print('Capitol of {} is ?'.format(self.country))
-		# else:
-		# 	print('')
+		if self.lives == 1:
+			#self.show_first = False
+			print('Capitol of {} is ?'.format(self.country))
+		else:
+			print('')
 		
-		# self.hag_graf.show_hangman(self.lives)
-		print('Capital: ',''.join(self.dashed_capital))
-		print('Used letters:', ''.join(self.added_leteres))
+		self.hag_graf.show_hangman(self.lives)
+		print('Capital: ',' '.join(self.dashed_capital))
+		print('Used letters:', ' '.join(self.added_leteres))
 		print('Lives:', self.lives)
 		time_now_sec = int((timer() - self.time_start) % 60)
 		time_now_min = int((timer() - self.time_start) / 60)
@@ -106,13 +106,12 @@ class One_Game(object):
 		high_score.append(your_score)
 		high_score.sort(key = lambda x: x[2])
 		pickle.dump(high_score, open('hangman_scores.p', 'wb'))
-		#print(self.high_scores)
 		self.display_high_score()
 
 	def display_high_score(self):
 		print("Top Scores:")
 		for line in self.high_scores[:10]:
-			print((line[2] + ' - ' + line[0] + ' - ' + str(line[3]) + ' - ' + line[4] + ' - ' + line[1]))
+			print((line[2] + ' - ' + '{:<15s}' + ' - ' + str(line[3]) + ' tries - ' + '{:<15s}' + ' - ' + line[1]).format(line[0], line[4]))
 
 	def game_over_lose(self):
 		self.show_progress_hangman()
