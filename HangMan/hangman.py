@@ -15,7 +15,7 @@ player = One_Game(random_words('countries_and_capitals.txt'))
 answer_l_w = ''
 while answer_l_w != 'l' and answer_l_w != 'w' and answer_l_w != 'q':
 	if player.lives <= 0:
-		player = One_Game(random_words('countries_and_capitals.txt'))
+		player = One_Game(random_words('countries_and_capitals.txt')) #DLACZEGO?
 	
 	player.show_progress_hangman()
 	answer_l_w = input('Will you guess a letter or word? (l or w) (q to quit):').lower()
