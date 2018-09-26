@@ -47,7 +47,7 @@ class OnePlayerPG(object):
 					if self.with_screen == 'ask_w_l':
 						for char in self.alphabet_box:
 							if self.alphabet_box[char].collidepoint(event.pos):
-								self.mouse_click_letter = char
+								self.mouse_click_letter = char.upper()
 								self.play_klick()
 								print(self.mouse_click_letter)
 					
@@ -59,6 +59,7 @@ class OnePlayerPG(object):
 			
 			self.draw_start(self.mouse_pos_click)
 			self.draw_ask_w_l(self.mouse_pos_click)
+			self.draw_game_over(self.mouse_pos_click)
 			# self.draw_ask_l(self.mouse_pos_click)
 			# self.draw_ask_w(self.mouse_pos_click)
 			
@@ -68,11 +69,6 @@ class OnePlayerPG(object):
 		pygame.mixer.music.stop()
 		pygame.quit()
 	
-	
-	def draw_text(self, text, X = 0, Y = 0, R = 255, G = 0, B = 0):
-		font = pygame.font.SysFont('mono', 20, bold=True)
-		surface = font.render(text, True, (R, G, B))
-		self.background.blit(surface, (X, Y))
 	
 	def draw_start(self, mouse_click_pos):
 		if self.with_screen == 'start':
@@ -93,6 +89,7 @@ class OnePlayerPG(object):
 	
 	def draw_ask_w_l(self, mouse_click_pos):
 		if self.with_screen == 'ask_w_l':
+			# print(self.player.capital_word)
 			# Graphhics
 			self.background.blit(self.background_image, (0, 0))
 			if self.mouse_click_letter:
@@ -107,75 +104,26 @@ class OnePlayerPG(object):
 				self.draw_text(line, 10, y, 200, 200, 200)
 				y += 30
 			self.draw_text('_____________________', 10, y, 200, 200, 200)
-		# w_surface = pygame.image.load('Images/w_button.png')
-		# l_surface = pygame.image.load('Images/l_button.png')
-		# # a_surface = pygame.image.load('Images/a.png')
-		# self.screen.blit(self.background, (0, 0))
-		# self.draw_text(str(self.mouse_pos_click))
-		# self.screen.blit(w_surface, (200, 400))
-		# self.screen.blit(l_surface, (100, 400))
-		# # self.screen.blit(a_surface, (350, 50))
-		# self.draw_alphabet()
-		# self.draw_text('Will you guess a letter or word? (Esc to quit):', 5, 380, 200,200,200)
-		# if (104 < mouse_click_pos[0] < 145) and (404 < mouse_click_pos[1] < 431):
-		# 	self.with_screen = 'ask_l'
-		# if (205 < mouse_click_pos[0] < 245) and (404 < mouse_click_pos[1] < 431):
-		# 	self.with_screen = 'ask_w'
+			if self.player.lives <= 0:
+				# print(self.with_screen)
+				self.with_screen == 'lose'
+				
 	
-	# def draw_ask_l(self, mouse_click_pos):
-	# 	if self.with_screen == 'ask_l':
-	# 		self.screen.blit(self.background, (0, 0))
-	# 		input_box = pygame.Rect(100, 100, 140, 32)
-	# 		color_inactive = pygame.Color('lightskyblue3')
-	# 		color_active = pygame.Color('dodgerblue2')
-	# 		color = color_inactive
-	# 		self.active = False
-	#
-	# 		txt_surface = self.font.render('texttdtdt', True, color)
-	# 		width = max(200, txt_surface.get_width() + 10)
-	# 		input_box.w = width
-	# 		self.screen.blit(txt_surface, (input_box.x + 5, input_box.y + 5))
-	# 		pygame.draw.rect(self.screen, color, input_box, 2)
-	# 		print(self.input_l_txt)
-	#
-	# 	# for event in pygame.event.get():
-	# 	# 	if event.type == pygame.MOUSEBUTTONDOWN:
-	# 	# 		# If the user clicked on the input_box rect.
-	# 	# 		if input_box.collidepoint(event.pos):
-	# 	# 			# Toggle the active variable.
-	# 	# 			self.active = not self.active
-	# 	# 		else:
-	# 	# 			self.active = False
-	# 	# 		# Change the current color of the input box.
-	# 	# 		color = color_active if self.active else color_inactive
-	# 	# 	if event.type == pygame.KEYDOWN:
-	# 	# 		if self.active:
-	# 	# 			if event.key == pygame.K_RETURN:
-	# 	# 				print(self.input_l_txt)
-	# 	# 				self.input_l_txt = ''
-	# 	# 			elif event.key == pygame.K_BACKSPACE:
-	# 	# 				text = self.input_l_txt[:-1]
-	# 	# 			else:
-	# 	# 				self.input_l_txt += event.unicode
-	#
-	#
-	# 	# print('draw_ask_l')
-	
-	
-	def draw_ask_w(self, mouse_click_pos):
-		if self.with_screen == 'ask_w':
-			print('draw_ask_w')
-	
-	
-	def draw_game_over(self, win_loos = True):
+	def draw_game_over(self, mouse_click_pos):
+		if self.with_screen == 'lose':
+			# Graphhics
+			self.background.blit(self.background_image, (0, 0))
+		
+		if self.with_screen == 'win':
+			pass
 		pass
 	
 	def draw_ask_again(self):
 		pass
 	
 	def draw_alphabet(self):
-		alphabet = ('a', 'b', 'c', 'd', 'e', 'f')#, 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't',
-		            #'u', 'v', 'w', 'x', 'y', 'z')
+		alphabet = ('A', 'B', 'C', 'D', 'E', 'F')#, 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
+		            #'U', 'V', 'W', 'X', 'Y', 'Z')
 		
 		self.alphabet_box = {}
 		x = 320
@@ -202,6 +150,12 @@ class OnePlayerPG(object):
 		for char in alphabet:
 			if char not in self.player.added_leteres:
 				self.background.blit(self.alphabet_surface[char], self.alphabet_box[char])
+		
+		
+	def draw_text(self, text, X = 0, Y = 0, R = 255, G = 0, B = 0):
+		font = pygame.font.SysFont('mono', 20, bold=True)
+		surface = font.render(text, True, (R, G, B))
+		self.background.blit(surface, (X, Y))
 		
 		
 	def play_klick(self, sound = 'Sounds/start.wav'):

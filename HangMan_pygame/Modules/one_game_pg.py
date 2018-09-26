@@ -34,26 +34,19 @@ class One_Game(object):
 		self.dashed_capital = list(self.dashed_capital)
 		
 	
-	def guess_the_letter(self, letter):
+	def guess_the_letter(self, ans):
 		self.guessing_tries += 1
-		# ans = input("letter:").capitalize()
-		ans = letter
-		if ans in self.added_leteres:
-			self.lives -= 1
-			# print('You have already tried this letter, be cautious')
+		if ans in self.capital:
+			while ans in self.capital:
+				num = self.capital.index(ans)
+				self.dashed_capital[num] = ans
+				self.capital[num] = '*'
+			self.added_leteres.append(ans)
 		else:
-			if ans in self.capital:
-				while ans in self.capital:
-					num = self.capital.index(ans)
-					self.dashed_capital[num] = ans
-					self.capital[num] = '*'
-			elif ans in self.capital_buff:
-				# print('This letter was already guessed, press any key')
-				# input()
-				self.lives -= 1
-			else:
-				self.added_leteres.append(ans)
-				self.lives -= 1
+			self.added_leteres.append(ans)
+			self.lives -= 1
+		
+		
 		if self.lives < 1:
 			# self.game_over_lose()
 			return 'lose'
@@ -79,7 +72,7 @@ class One_Game(object):
 		
 		show_progress = []
 		show_progress.append('Capital: ' + ''.join(self.dashed_capital))
-		# show_progress.append('Used letters:' + ''.join(self.added_leteres))
+		show_progress.append('__Used letters:' + ''.join(self.added_leteres))
 		show_progress.append('Lives:' + str(self.lives))
 		show_progress.append(''.join('Guessing time: {:02d} : {:02d}'.format(time_now_min, time_now_sec)))
 		return show_progress
