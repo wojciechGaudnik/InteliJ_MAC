@@ -241,7 +241,7 @@ class OnePlayerPG(object):
 		for i in self.player.high_scores[0]:
 			a += str(i)
 			a += ' '
-		self.__draw_text(a)
+		self.__draw_text(a, 5, 30)
 		print(a)
 		# for line in self.player.high_scores:
 		# 	pass
