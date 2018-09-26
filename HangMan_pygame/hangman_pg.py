@@ -9,12 +9,12 @@ import pickle
 # from HangMan_pygame.hang_pygame import OnePlayerPG
 
 from HangMan_pygame.hang_class_pg import OnePlayerPG
-from from_file_pg import random_words
-from one_game_pg import One_Game
+# from from_file_pg import random_words
+# from one_game_pg import One_Game
 
+assert 1 == 1
 
-
-OnePlayerPG(640, 480).run()
+OnePlayerPG().run()
 
 
 sys.exit()

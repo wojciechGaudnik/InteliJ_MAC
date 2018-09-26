@@ -1,5 +1,5 @@
 # from HangMan.hangman_graf import Show_hangman
-from hangman_graf import Show_hangman
+# from hangman_graf import Show_hangman
 
 import os
 from timeit import default_timer as timer
@@ -16,7 +16,7 @@ class One_Game(object):
 		self.capital_word = words[1].upper()
 		self.dashed_capital = []
 		self.lives = 5
-		self.hag_graf = Show_hangman()
+		# self.hag_graf = Show_hangman()
 		self.time_start = timer()
 		self.show_first = True
 		self.guessing_tries = 0
@@ -77,7 +77,8 @@ class One_Game(object):
 		# 	print('Capitol of {} is ?'.format(self.country))
 		# else:
 		# 	print('')
-		self.hag_graf.show_hangman(self.lives)
+		
+		# self.hag_graf.show_hangman(self.lives)
 		print('Capital: ',''.join(self.dashed_capital))
 		print('Used letters:', ''.join(self.added_leteres))
 		print('Lives:', self.lives)
