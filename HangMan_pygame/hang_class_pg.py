@@ -5,7 +5,7 @@ from HangMan_pygame.Modules.from_file_pg import random_words
 # ballsurface = pygame.Surface((200, 200), pygame.SRCALPHA)
 # ballsurface = ballsurface.convert_alpha()
 # self.background = pygame.Surface(self.screen.get_size()).convert()
-# self.draw_text("FPS: {:6.3}{}PLAYTIME: {:6.3} SECONDS".format(self.clock.get_fps(), " "*5, self.playtime))
+# self.__draw_text("FPS: {:6.3}{}PLAYTIME: {:6.3} SECONDS".format(self.clock.get_fps(), " "*5, self.playtime))
 
 class OnePlayerPG(object):
 	def __init__(self):
@@ -48,8 +48,8 @@ class OnePlayerPG(object):
 						for char in self.alphabet_box:
 							if self.alphabet_box[char].collidepoint(event.pos):
 								self.mouse_click_letter = char.upper()
-								self.play_klick()
-								print(self.mouse_click_letter)
+								self.__play_klick()
+								# print(self.mouse_click_letter)
 					
 					
 					# if self.with_screen == 'ask_w_l' and self.a_box.collidepoint(event.pos):
@@ -78,42 +78,48 @@ class OnePlayerPG(object):
 			self.background.blit(self.background_image, (0, 0))
 			playbatton = pygame.image.load('Images/play_button.png')
 			self.background.blit(playbatton, (500, 400))
-			self.draw_text(str(self.mouse_pos_click))
-			self.draw_text("There we will write short story", 100, 100, 200, 200, 200)
-			self.draw_text("and instructions", 100, 120, 200, 200, 200)
+			self.__draw_text(str(self.mouse_pos_click))
+			self.__draw_text("There we will write short story", 100, 100, 200, 200, 200)
+			self.__draw_text("and instructions", 100, 120, 200, 200, 200)
 		
 			# TODO na eventy !!!!!!!!
 			if (505 < mouse_click_pos[0] < 544) and (405 < mouse_click_pos[1] < 428):
 				self.with_screen = 'ask_w_l'
-		
+				
 	
 	def draw_ask_w_l(self, mouse_click_pos):
 		if self.with_screen == 'ask_w_l':
-			# print(self.player.capital_word)
 			# Graphhics
 			self.background.blit(self.background_image, (0, 0))
 			if self.mouse_click_letter:
 				self.player.guess_the_letter(self.mouse_click_letter)
 				self.mouse_click_letter = ''
 			
-			
-			self.draw_alphabet()
+			# TXT in Graphics
+			self.__draw_alphabet()
 			progress = self.player.show_progress_hangman()
-			y = 330
+			y = 430
 			for line in progress:
-				self.draw_text(line, 10, y, 200, 200, 200)
+				self.__draw_text(line, 10, y, 200, 200, 200)
 				y += 30
-			self.draw_text('_____________________', 10, y, 200, 200, 200)
+			self.__draw_text('_____________________', 10, y, 200, 200, 200)
 			if self.player.lives <= 0:
-				# print(self.with_screen)
-				self.with_screen == 'lose'
+				self.with_screen = 'lose'
 				
+			# HangMan Grapfhics
+			# print('test')
+			self.__draw_hangman(self.player.lives)
+			# hang_man = pygame.image.load('Images/{}.png'.format(self.player.lives))  # .convert()
+			# self.background.blit(hang_man, (30, 50))
 	
 	def draw_game_over(self, mouse_click_pos):
 		if self.with_screen == 'lose':
 			# Graphhics
 			self.background.blit(self.background_image, (0, 0))
-		
+			self.__draw_hangman(self.player.lives)
+			# hang_man = pygame.image.load('Images/{}.png'.format(self.player.lives))  # .convert()
+			# self.background.blit(hang_man, (30, 50))
+			
 		if self.with_screen == 'win':
 			pass
 		pass
@@ -121,23 +127,25 @@ class OnePlayerPG(object):
 	def draw_ask_again(self):
 		pass
 	
-	def draw_alphabet(self):
-		alphabet = ('A', 'B', 'C', 'D', 'E', 'F')#, 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
-		            #'U', 'V', 'W', 'X', 'Y', 'Z')
+	def __draw_alphabet(self):
+		alphabet = ('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
+		            'U', 'V', 'W', 'X', 'Y', 'Z')
+		# print(len(alphabet))
 		
 		self.alphabet_box = {}
 		x = 320
 		y = 50
 		for char in alphabet:
 			if x > 550:
-				x = 320
+				x = 370
 				y += 40
 				if char not in self.player.added_leteres:
 					self.alphabet_box.update({char: pygame.Rect(x, y, 40, 33)})
 			else:
+				x += 50
 				if char not in self.player.added_leteres:
 					self.alphabet_box.update({char: pygame.Rect(x, y, 40, 33)})
-				x += 50
+				
 		
 		self.alphabet_surface = {}
 		file_name = 'Images/{}.png'
@@ -152,14 +160,22 @@ class OnePlayerPG(object):
 				self.background.blit(self.alphabet_surface[char], self.alphabet_box[char])
 		
 		
-	def draw_text(self, text, X = 0, Y = 0, R = 255, G = 0, B = 0):
+	def __draw_text(self, text, X = 0, Y = 0, R = 255, G = 0, B = 0):
 		font = pygame.font.SysFont('mono', 20, bold=True)
 		surface = font.render(text, True, (R, G, B))
 		self.background.blit(surface, (X, Y))
 		
 		
-	def play_klick(self, sound = 'Sounds/start.wav'):
+	def __play_klick(self, sound ='Sounds/start.wav'):
 		play_sound = pygame.mixer.Sound(sound)
 		play_sound.play()
-		time.sleep(0.5)
+		time.sleep(0.3)
 		play_sound.stop()
+		
+	def __draw_hangman(self, lives):
+		hang_man = pygame.image.load('Images/{}.png'.format(lives)) #.convert()
+		self.background.blit(hang_man, (30, 100))
+
+# ballsurface = pygame.Surface((200, 200), pygame.SRCALPHA)
+# ballsurface = ballsurface.convert_alpha()
+# self.background = pygame.Surface(self.screen.get_size()).convert()

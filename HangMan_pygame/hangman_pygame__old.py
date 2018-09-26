@@ -25,12 +25,12 @@
 # 				elif event.type == pygame.KEYDOWN:
 # 					if event.key == pygame.K_ESCAPE:
 # 						running = False
-# 			self.draw_text('HangMan')
+# 			self.__draw_text('HangMan')
 # 			pygame.display.flip()
 # 			self.screen.blit(self.background, (0, 0))
 # 		pygame.quit()
 #
-# 	def draw_text(self, text):
+# 	def __draw_text(self, text):
 # 		fw, fh = self.font.size(text)
 # 		surface = self.font.render(text, True, (0, 255, 0))
 # 		self.screen.blit(surface, ((self.width - fw) // 2, (self.height - fh) // 2))

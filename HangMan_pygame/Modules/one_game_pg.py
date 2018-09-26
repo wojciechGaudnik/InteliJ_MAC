@@ -72,8 +72,8 @@ class One_Game(object):
 		
 		show_progress = []
 		show_progress.append('Capital: ' + ''.join(self.dashed_capital))
-		show_progress.append('__Used letters:' + ''.join(self.added_leteres))
-		show_progress.append('Lives:' + str(self.lives))
+		# show_progress.append('__Used letters:' + ''.join(self.added_leteres))
+		# show_progress.append('Lives:' + str(self.lives))
 		show_progress.append(''.join('Guessing time: {:02d} : {:02d}'.format(time_now_min, time_now_sec)))
 		return show_progress
 	
