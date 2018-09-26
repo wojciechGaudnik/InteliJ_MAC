@@ -1,5 +1,4 @@
-import random
-import sys
+import random, sys
 
 def random_words(file_name):
 	try:

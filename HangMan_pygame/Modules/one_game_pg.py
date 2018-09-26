@@ -1,7 +1,3 @@
-# from HangMan.hangman_graf import Show_hangman
-# from hangman_graf import Show_hangman
-
-import os
 from timeit import default_timer as timer
 import datetime
 import pickle
@@ -16,7 +12,6 @@ class One_Game(object):
 		self.capital_word = words[1].upper()
 		self.dashed_capital = []
 		self.lives = 5
-		# self.hag_graf = Show_hangman()
 		self.time_start = timer()
 		self.show_first = True
 		self.guessing_tries = 0
@@ -24,7 +19,6 @@ class One_Game(object):
 		self.high_scores = pickle.load(open('hangman_scores.p', 'rb'))
 		
 		print(self.capital_word)
-		# input('')
 		
 		for ans in self.capital:
 			if ans != ' ':
@@ -45,8 +39,6 @@ class One_Game(object):
 		else:
 			self.added_leteres.append(ans)
 			self.lives -= 1
-		
-		
 		if self.lives < 1:
 			return 'lose'
 		elif '_' not in self.dashed_capital:
@@ -67,19 +59,19 @@ class One_Game(object):
 			else:
 				return  'ask_w_l'
 	
+	
 	def show_progress_hangman(self):
 		time_now_sec = int((timer() - self.time_start) % 60)
 		time_now_min = int((timer() - self.time_start) / 60)
 		
 		show_progress = []
 		show_progress.append('Capital: ' + ''.join(self.dashed_capital))
-		# show_progress.append('__Used letters:' + ''.join(self.added_leteres))
-		# show_progress.append('Lives:' + str(self.lives))
-		# print(self.guessing_tries)
 		show_progress.append('Guessing_tries:' + str(self.guessing_tries))
 		show_progress.append(''.join('Guessing time: {:02d} : {:02d}'.format(time_now_min, time_now_sec)))
 		show_progress.append('Answer is: ' + self.capital_word)
+		# show_progress.append(self.high_scores)
 		return show_progress
+	
 	
 	def game_over_win(self):
 		self.show_progress_hangman()
@@ -90,6 +82,7 @@ class One_Game(object):
 		      format(self.guessing_tries, self.time_now_min, self.time_now_sec))
 		self.add_your_score()
 
+
 	def add_your_score(self):
 		self.name = input('What is your name? ')
 		your_score = [self.name, datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), '{:02d}:{:02d} min:sec'.format(self.time_now_min, self.time_now_sec), self.guessing_tries, self.capital_word]
@@ -97,18 +90,20 @@ class One_Game(object):
 		high_score.append(your_score)
 		high_score.sort(key = lambda x: x[2])
 		pickle.dump(high_score, open('hangman_scores.p', 'wb'))
-		#print(self.high_scores)
 		self.display_high_score()
+
 
 	def display_high_score(self):
 		print("Top Scores:")
 		for line in self.high_scores[:10]:
 			print((line[2] + ' - ' + line[0] + ' - ' + str(line[3]) + ' - ' + line[4] + ' - ' + line[1]))
 
+
 	def game_over_lose(self):
 		self.show_progress_hangman()
 		print('lose')
 		self.display_high_score()	
+	
 	
 	def print_w(self):
 		print(self.lives)
