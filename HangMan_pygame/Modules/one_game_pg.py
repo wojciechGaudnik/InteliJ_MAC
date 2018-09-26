@@ -48,22 +48,18 @@ class One_Game(object):
 		
 		
 		if self.lives < 1:
-			# self.game_over_lose()
 			return 'lose'
-		if '_' not in self.dashed_capital:
-			# self.game_over_win()
+		elif '_' not in self.dashed_capital:
 			return 'win'
-			
-			
-			
-	def guess_the_capital(self):
-		self.guessing_tries += 1
-		ans = input("Capital:").upper()
-		if ans == self.capital_word:
-			self.game_over_win()
 		else:
-			print('It is not correct, press any key')
-			input()
+			return 'ask_w_l'
+			
+			
+	def guess_the_capital(self, word):
+		self.guessing_tries += 1
+		if word == self.capital_word:
+			return 'win'
+		else:
 			self.lives -= 2
 	
 	def show_progress_hangman(self):

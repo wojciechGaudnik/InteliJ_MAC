@@ -40,7 +40,12 @@ class OnePlayerPG(object):
 		self.color = self.color_inactive
 		self.active = True
 		
-		# self.txt_surface = self.font.render(self.text, True, self.color)
+		# Buttons
+		self.reverse_button_click = False
+		self.a_b_box = pygame.Rect(550, 400, 80, 71)
+
+		# self.a_b_box =
+	# self.txt_surface = self.font.render(self.text, True, self.color)
 		# Resize the box if the text is too long.
 		# width = max(200, self.txt_surface.get_width() + 10)
 		# self.input_box.w = width
@@ -60,7 +65,8 @@ class OnePlayerPG(object):
 					# 	self.input_l_txt = event.unicode
 					if self.active:
 						if event.key == pygame.K_RETURN:
-							print(self.text)
+							self.text = self.text.upper()
+							self.with_screen = self.player.guess_the_capital(self.text)
 							self.text = ''
 						elif event.key == pygame.K_BACKSPACE:
 							self.text = self.text[:-1]
@@ -79,7 +85,9 @@ class OnePlayerPG(object):
 					else:
 						self.active = False
 					self.color = self.color_active if self.active else self.color_inactive
-					
+					if self.a_b_box.collidepoint(event.pos):
+						self.with_screen = 'start'
+						print(self.with_screen)
 					
 					# if self.with_screen == 'ask_w_l' and self.a_box.collidepoint(event.pos):
 					# 	print('a')
@@ -121,7 +129,7 @@ class OnePlayerPG(object):
 			# Graphhics
 			self.background.blit(self.background_image, (0, 0))
 			if self.mouse_click_letter:
-				self.player.guess_the_letter(self.mouse_click_letter)
+				self.with_screen = self.player.guess_the_letter(self.mouse_click_letter)
 				self.mouse_click_letter = ''
 			
 			# TXT in Graphics
@@ -137,13 +145,15 @@ class OnePlayerPG(object):
 				
 			# HangMan Grapfhics
 			self.__draw_hangman(self.player.lives)
+			# print(self.text)
 			
 			# Whole Word
-			self.txt_surface = self.font.render(self.text, True, self.color)
-			width = max(200, self.txt_surface.get_width() + 10)
-			self.input_box.w = width
-			self.background.blit(self.txt_surface, (self.input_box.x + 5, self.input_box.y + 5))
-			pygame.draw.rect(self.background, self.color, self.input_box, 2)
+			self.__draw_inbox()
+			# self.txt_surface = self.font.render(self.text, True, self.color)
+			# width = max(200, self.txt_surface.get_width() + 10)
+			# self.input_box.w = width
+			# self.background.blit(self.txt_surface, (self.input_box.x + 5, self.input_box.y + 5))
+			# pygame.draw.rect(self.background, self.color, self.input_box, 2)
 			
 	
 	def draw_game_over(self, mouse_click_pos):
@@ -155,6 +165,10 @@ class OnePlayerPG(object):
 			# self.background.blit(hang_man, (30, 50))
 			
 		if self.with_screen == 'win':
+			self.background.blit(self.background_image, (0, 0))
+			self.__draw_text('Congratulation !!! you WIN !!!')
+			# print('wineeee')
+			self.__draw_play_again()
 			pass
 		pass
 	
@@ -208,10 +222,24 @@ class OnePlayerPG(object):
 		
 	def __draw_hangman(self, lives):
 		if self.player.lives <= 1:
-			print('podpowiedz')
+			print('podpowiedz') #TODO !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 		hang_man = pygame.image.load('Images/{}.png'.format(lives)) #.convert()
 		self.background.blit(hang_man, (30, 100))
 
+	def __draw_inbox(self):
+		self.txt_surface = self.font.render(self.text, True, self.color)
+		width = max(200, self.txt_surface.get_width() + 10)
+		self.input_box.w = width
+		self.background.blit(self.txt_surface, (self.input_box.x + 5, self.input_box.y + 5))
+		pygame.draw.rect(self.background, self.color, self.input_box, 2)
+		
+	def __draw_play_again(self):
+		# self.a_b_box = pygame.Rect(550, 400, 40, 33)
+		a_b_syrface = pygame.image.load('Images/reverse_button.png')
+		self.background.blit(a_b_syrface, self.a_b_box)
+		
+		# self.reverse_button_click
+		pass
 # ballsurface = pygame.Surface((200, 200), pygame.SRCALPHA)
 # ballsurface = ballsurface.convert_alpha()
 # self.background = pygame.Surface(self.screen.get_size()).convert()
