@@ -61,6 +61,11 @@ class One_Game(object):
 			return 'win'
 		else:
 			self.lives -= 2
+			
+			if self.lives < 1:
+				return 'lose'
+			else:
+				return  'ask_w_l'
 	
 	def show_progress_hangman(self):
 		time_now_sec = int((timer() - self.time_start) % 60)
@@ -70,7 +75,10 @@ class One_Game(object):
 		show_progress.append('Capital: ' + ''.join(self.dashed_capital))
 		# show_progress.append('__Used letters:' + ''.join(self.added_leteres))
 		# show_progress.append('Lives:' + str(self.lives))
+		# print(self.guessing_tries)
+		show_progress.append('Guessing_tries:' + str(self.guessing_tries))
 		show_progress.append(''.join('Guessing time: {:02d} : {:02d}'.format(time_now_min, time_now_sec)))
+		show_progress.append('Answer is: ' + self.capital_word)
 		return show_progress
 	
 	def game_over_win(self):

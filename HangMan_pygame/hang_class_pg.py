@@ -27,6 +27,8 @@ class OnePlayerPG(object):
 		self.mouse_pos_click = [0, 0]
 		self.with_screen = 'start'
 		self.mouse_click_letter = ''
+		self.first_time_in___show_progress = True
+		self.time_stop = ''
 		# self.active = False
 		# self.input_l_txt = ''
 		# self.input_w_txt = ''
@@ -109,13 +111,15 @@ class OnePlayerPG(object):
 	
 	def draw_start(self, mouse_click_pos):
 		if self.with_screen == 'start':
+			# self.time_stop = ''
+			self.first_time_in___show_progress = True
 			self.player = One_Game(random_words('countries_and_capitals.txt'))
 			
 			# Graphhics
 			self.background.blit(self.background_image, (0, 0))
 			playbatton = pygame.image.load('Images/play_button.png')
 			self.background.blit(playbatton, (500, 400))
-			self.__draw_text(str(self.mouse_pos_click))
+			# self.__draw_text(str(self.mouse_pos_click))
 			self.__draw_text("There we will write short story", 100, 100, 200, 200, 200)
 			self.__draw_text("and instructions", 100, 120, 200, 200, 200)
 		
@@ -134,17 +138,20 @@ class OnePlayerPG(object):
 			
 			# TXT in Graphics
 			self.__draw_alphabet()
-			progress = self.player.show_progress_hangman()
-			y = 430
-			for line in progress:
-				self.__draw_text(line, 10, y, 200, 200, 200)
-				y += 30
-			self.__draw_text('_____________________', 10, y, 200, 200, 200)
+			self.__show_progress()
+			
+			
+			# progress = self.player.show_progress_hangman()
+			# y = 430
+			# for line in progress:
+			# 	self.__draw_text(line, 10, y, 200, 200, 200)
+			# 	y += 30
+			# self.__draw_text('_____________________', 10, y, 200, 200, 200)
 			if self.player.lives <= 0:
 				self.with_screen = 'lose'
 				
 			# HangMan Grapfhics
-			self.__draw_hangman(self.player.lives)
+			self.__draw_hangman()
 			# print(self.text)
 			
 			# Whole Word
@@ -156,25 +163,27 @@ class OnePlayerPG(object):
 			# pygame.draw.rect(self.background, self.color, self.input_box, 2)
 			
 	
-	def draw_game_over(self, mouse_click_pos):
+	def draw_game_over(self, mouse_click_pos):# TODO !!!!!!!!!!!!!!!!!!!1 usun mause
 		if self.with_screen == 'lose':
 			# Graphhics
 			self.background.blit(self.background_image, (0, 0))
-			self.__draw_hangman(self.player.lives)
-			# hang_man = pygame.image.load('Images/{}.png'.format(self.player.lives))  # .convert()
+			self.__draw_hangman()
+			self.__draw_play_again()
+			self.__show_progress(True)
+			
+		
+		# hang_man = pygame.image.load('Images/{}.png'.format(self.player.lives))  # .convert()
 			# self.background.blit(hang_man, (30, 50))
 			
 		if self.with_screen == 'win':
 			self.background.blit(self.background_image, (0, 0))
 			self.__draw_text('Congratulation !!! you WIN !!!')
-			# print('wineeee')
 			self.__draw_play_again()
-			pass
+			# print(self.player.guessing_tries)
+			self.__show_progress(True)
 		pass
 	
-	def draw_ask_again(self):
-		pass
-	
+		
 	def __draw_alphabet(self):
 		alphabet = ('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
 		            'U', 'V', 'W', 'X', 'Y', 'Z')
@@ -220,10 +229,13 @@ class OnePlayerPG(object):
 		time.sleep(0.3)
 		play_sound.stop()
 		
-	def __draw_hangman(self, lives):
-		if self.player.lives <= 1:
-			print('podpowiedz') #TODO !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-		hang_man = pygame.image.load('Images/{}.png'.format(lives)) #.convert()
+	def __draw_hangman(self):
+		if self.player.lives == 1:
+			self.__draw_text(self.player.country)
+			# self.
+		if self.player.lives < 0:
+			self.player.lives = 0
+		hang_man = pygame.image.load('Images/{}.png'.format(self.player.lives)) #.convert()
 		self.background.blit(hang_man, (30, 100))
 
 	def __draw_inbox(self):
@@ -238,8 +250,45 @@ class OnePlayerPG(object):
 		a_b_syrface = pygame.image.load('Images/reverse_button.png')
 		self.background.blit(a_b_syrface, self.a_b_box)
 		
-		# self.reverse_button_click
-		pass
+	def __show_progress(self, game_over = False):
+		progress = self.player.show_progress_hangman()
+		# print(progress[1])
+		# print(game_over)
+		# print(self.first_time_in___show_progress)
+		y = 380
+		if game_over == False:
+			# TODO w trakcie gry
+			for line in self.player.show_progress_hangman()[:-1]:
+				self.__draw_text(line, 10, y, 200, 200, 200)
+				y += 30
+				# print(progress)
+				self.progress__buf = progress[:]
+		elif self.first_time_in___show_progress:
+			self.first_time_in___show_progress = False
+			# self.progress__buf = progress[:]
+			# print('teraz')
+			# print(self.progress__buf)
+			# TODO game over PIERWSZY obieg
+			self.time_stop = progress[2]
+			print(self.time_stop)
+			print('pierwszy raz')
+			for line in self.player.show_progress_hangman()[1:]:
+				self.__draw_text(line, 10, y, 200, 200, 200)
+				y += 30
+				# self.first_time = False
+		else:
+			# TODO game over KOLEJNE obiegi
+			# print("--------")
+			# self.player.show_progress_hangman()[2] = self.time_stop
+			for line in self.player.show_progress_hangman()[1:]:
+				if 'Guessing time' in line:
+					# print('JEST !!!')
+					line = self.time_stop
+				self.__draw_text(line, 10, y, 200, 200, 200)
+				y += 30
+				# self.first_time = False
+				
+		self.__draw_text('_____________________', 10, y, 200, 200, 200)
 # ballsurface = pygame.Surface((200, 200), pygame.SRCALPHA)
 # ballsurface = ballsurface.convert_alpha()
 # self.background = pygame.Surface(self.screen.get_size()).convert()
