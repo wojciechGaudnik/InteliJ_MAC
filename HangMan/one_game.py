@@ -78,8 +78,8 @@ class One_Game(object):
 			print('It is not correct, press Enter')
 			input()
 			self.lives -= 2
-		if self.lives < 1:
-			self.game_over_lose()
+			if self.lives < 1:
+				self.game_over_lose()
 	
 	def show_progress_hangman(self):
 		os.system('clear')
