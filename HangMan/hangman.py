@@ -7,8 +7,6 @@ import pickle
 from from_file import random_words
 from one_game import One_Game
 
-# TODO wpisywanie wielu liter, hyba bierze pierwsza do sprawdzenia, pozostale odklada na liste_added
-
 os.system('clear')
 
 player = One_Game(random_words('countries_and_capitals.txt'))
@@ -17,7 +15,7 @@ player = One_Game(random_words('countries_and_capitals.txt'))
 answer_l_w = ''
 while answer_l_w != 'l' and answer_l_w != 'w' and answer_l_w != 'q':
 	if player.lives <= 0:
-		player = One_Game(random_words('countries_and_capitals.txt')) #DLACZEGO?
+		player = One_Game(random_words('countries_and_capitals.txt'))
 	
 	player.show_progress_hangman()
 	answer_l_w = input('Will you guess a letter or word? (l or w) (q to quit):').lower()

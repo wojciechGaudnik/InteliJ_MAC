@@ -5,6 +5,7 @@ import os
 from timeit import default_timer as timer
 import datetime
 import pickle
+from tabulate import tabulate
 
 class One_Game(object):
 	""""asdf asdf asdf asdf """
@@ -32,32 +33,43 @@ class One_Game(object):
 				self.dashed_capital += '_'
 			else:
 				self.dashed_capital += ' '
-		self.dashed_capital = list(self.dashed_capital) # DLACZEGO?
+		#self.dashed_capital = list(self.dashed_capital)
 		
 	
 	def guess_the_letter(self):
 		self.guessing_tries += 1
+		alphabet = ('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
+		            'U', 'V', 'W', 'X', 'Y', 'Z')
 		ans = input("letter:").capitalize()
-		if ans in self.added_leteres:
-			self.lives -= 1
-			print('You have already tried this letter, be cautious')
+		if len(ans) > 1:
+			print('Enter one letter only')
+			input('')
 		else:
-			if ans in self.capital:
-				while ans in self.capital:
-					num = self.capital.index(ans)
-					self.dashed_capital[num] = ans
-					self.capital[num] = '*'
-			elif ans in self.capital_buff:
-				print('This letter was already guessed, press any key')
+			if ans not in alphabet:
+				print('This is not a letter, try again')
 				input()
-				self.lives -= 1
 			else:
-				self.added_leteres.append(ans)
-				self.lives -= 1
-		if self.lives < 1:
-			self.game_over_lose()
-		if '_' not in self.dashed_capital:
-			self.game_over_win()
+				if ans in self.added_leteres:
+					self.lives -= 1
+					print('You have already tried this letter, be cautious')
+					input('')
+				else:
+					if ans in self.capital:
+						while ans in self.capital:
+							num = self.capital.index(ans)
+							self.dashed_capital[num] = ans
+							self.capital[num] = '*'
+					elif ans in self.capital_buff:
+						print('This letter was already guessed, press any key')
+						input()
+						self.lives -= 1
+					else:
+						self.added_leteres.append(ans)
+						self.lives -= 1
+			if self.lives < 1:
+				self.game_over_lose()
+			if '_' not in self.dashed_capital:
+				self.game_over_win()
 			
 			
 			
@@ -67,7 +79,7 @@ class One_Game(object):
 		if ans == self.capital_word:
 			self.game_over_win()
 		else:
-			print('It is not correct, press any key')
+			print('It is not correct, press Enter')
 			input()
 			self.lives -= 2
 	
@@ -75,7 +87,7 @@ class One_Game(object):
 		os.system('clear')
 		if self.lives == 1:
 			#self.show_first = False
-			print('Capitol of {} is ?'.format(self.country))
+			print('Capital of {} is ?'.format(self.country))
 		else:
 			print('')
 		
@@ -102,19 +114,21 @@ class One_Game(object):
 
 	def add_your_score(self):
 		self.name = input('What is your name? ')
-		your_score = [self.name, datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), '{:02d}:{:02d} min:sec'
-			.format(self.time_now_min, self.time_now_sec), self.guessing_tries, self.capital_word]
+		your_score = ['{:02d}:{:02d} min:sec'.format(self.time_now_min, self.time_now_sec), self.name, self.guessing_tries, self.capital_word, datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")]
 		high_score = self.high_scores
 		high_score.append(your_score)
-		high_score.sort(key = lambda x: x[2])
+		high_score.sort(key = lambda x: x[0])
 		pickle.dump(high_score, open('hangman_scores.p', 'wb'))
 		self.display_high_score()
 
 	def display_high_score(self):
-		print("Top Scores:")
-		for line in self.high_scores[:10]:
-			print((line[2] + ' - ' + '{:<15s}' + ' - ' + str(line[3]) + ' tries - ' + '{:<15s}' + ' - ' + line[1])
-			      .format(line[0], line[4]))
+		score_table = tabulate(self.high_scores)
+		print(score_table)
+		return score_table
+		# print("Top Scores:")
+		# for line in self.high_scores[:10]:
+		# 	print((line[2] + ' - ' + '{:<15s}' + ' - ' + str(line[3]) + ' tries - ' + '{:<15s}' + ' - ' + line[1])
+		# 	      .format(line[0], line[4]))
 
 	def game_over_lose(self):
 		self.show_progress_hangman()
