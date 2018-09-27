@@ -1,5 +1,5 @@
 import pygame, time
-from HangMan_pygame.Modules.hangman_logic import One_Game
+from HangMan_pygame.Modules.hangman_logic_pg import One_Game
 from HangMan_pygame.Modules.from_file_pg import random_words
 
 
