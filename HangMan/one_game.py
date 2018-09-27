@@ -106,13 +106,8 @@ class One_Game(object):
 		self.lives = 0
 		self.time_now_sec = int((timer() - self.time_start) % 60)
 		self.time_now_min = int((timer() - self.time_start) / 60)
-<<<<<<< HEAD
 		print('\nYou guessed the capital after {} tries. It took you {:02d}:{:02d} min:seconds\n'.
 		      format(self.guessing_tries, self.time_now_min, self.time_now_sec))
-=======
-		print('You guessed the capital after {} tries. It took you {:02d}:{:02d} min:seconds'
-		      .format(self.guessing_tries, self.time_now_min, self.time_now_sec))
->>>>>>> 872b4f679353378778a33b035b6f0b4281ca26e9
 		self.add_your_score()
 
 	def add_your_score(self):
