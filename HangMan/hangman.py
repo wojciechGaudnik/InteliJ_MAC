@@ -7,6 +7,7 @@ import pickle
 from from_file import random_words
 from one_game import One_Game
 
+# TODO wpisywanie wielu liter, hyba bierze pierwsza do sprawdzenia, pozostale odklada na liste_added
 
 os.system('clear')
 

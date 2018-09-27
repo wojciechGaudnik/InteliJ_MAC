@@ -35,3 +35,5 @@ def avr1(lista):
 	return(i_buf)
 
 print(avr1(numbers))
+a = input('a:')
+print(a)
