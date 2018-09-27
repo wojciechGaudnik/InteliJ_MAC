@@ -106,7 +106,7 @@ class One_Game(object):
 	def display_high_score(self):
 		high_score = []
 		high_score.append("Top Scores:")
-		for line in self.high_scores[:2]: #todo <----------------------- dodaj limit wyświetlanych wynikóœ
+		for line in self.high_scores[:3]: #todo <----------------------- dodaj limit wyświetlanych wynikóœ
 			high_score.append(line)
 		print('end display high score')
 		return high_score
