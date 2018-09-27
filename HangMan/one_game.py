@@ -5,6 +5,7 @@ import os
 from timeit import default_timer as timer
 import datetime
 import pickle
+from tabulate import tabulate
 
 class One_Game(object):
 	
@@ -77,7 +78,7 @@ class One_Game(object):
 		if ans == self.capital_word:
 			self.game_over_win()
 		else:
-			print('It is not correct, press any key')
+			print('It is not correct, press Enter')
 			input()
 			self.lives -= 2
 	
@@ -112,19 +113,21 @@ class One_Game(object):
 
 	def add_your_score(self):
 		self.name = input('What is your name? ')
-		your_score = [self.name, datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), '{:02d}:{:02d} min:sec'
-			.format(self.time_now_min, self.time_now_sec), self.guessing_tries, self.capital_word]
+		your_score = ['{:02d}:{:02d} min:sec'.format(self.time_now_min, self.time_now_sec), self.name, self.guessing_tries, self.capital_word, datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")]
 		high_score = self.high_scores
 		high_score.append(your_score)
-		high_score.sort(key = lambda x: x[2])
+		high_score.sort(key = lambda x: x[0])
 		pickle.dump(high_score, open('hangman_scores.p', 'wb'))
 		self.display_high_score()
 
 	def display_high_score(self):
-		print("Top Scores:")
-		for line in self.high_scores[:10]:
-			print((line[2] + ' - ' + '{:<15s}' + ' - ' + str(line[3]) + ' tries - ' + '{:<15s}' + ' - ' + line[1])
-			      .format(line[0], line[4]))
+		score_table = tabulate(self.high_scores)
+		print(score_table)
+		return score_table
+		# print("Top Scores:")
+		# for line in self.high_scores[:10]:
+		# 	print((line[2] + ' - ' + '{:<15s}' + ' - ' + str(line[3]) + ' tries - ' + '{:<15s}' + ' - ' + line[1])
+		# 	      .format(line[0], line[4]))
 
 	def game_over_lose(self):
 		self.show_progress_hangman()
