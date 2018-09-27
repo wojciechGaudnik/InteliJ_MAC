@@ -31,32 +31,43 @@ class One_Game(object):
 				self.dashed_capital += '_'
 			else:
 				self.dashed_capital += ' '
-		self.dashed_capital = list(self.dashed_capital) # DLACZEGO?
+		#self.dashed_capital = list(self.dashed_capital)
 		
 	
 	def guess_the_letter(self):
 		self.guessing_tries += 1
+		alphabet = ('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
+		            'U', 'V', 'W', 'X', 'Y', 'Z')
 		ans = input("letter:").capitalize()
-		if ans in self.added_leteres:
-			self.lives -= 1
-			print('You have already tried this letter, be cautious')
+		if len(ans) > 1:
+			print('Enter one letter only')
+			input('')
 		else:
-			if ans in self.capital:
-				while ans in self.capital:
-					num = self.capital.index(ans)
-					self.dashed_capital[num] = ans
-					self.capital[num] = '*'
-			elif ans in self.capital_buff:
-				print('This letter was already guessed, press any key')
+			if ans not in alphabet:
+				print('This is not a letter, try again')
 				input()
-				self.lives -= 1
 			else:
-				self.added_leteres.append(ans)
-				self.lives -= 1
-		if self.lives < 1:
-			self.game_over_lose()
-		if '_' not in self.dashed_capital:
-			self.game_over_win()
+				if ans in self.added_leteres:
+					self.lives -= 1
+					print('You have already tried this letter, be cautious')
+					input('')
+				else:
+					if ans in self.capital:
+						while ans in self.capital:
+							num = self.capital.index(ans)
+							self.dashed_capital[num] = ans
+							self.capital[num] = '*'
+					elif ans in self.capital_buff:
+						print('This letter was already guessed, press any key')
+						input()
+						self.lives -= 1
+					else:
+						self.added_leteres.append(ans)
+						self.lives -= 1
+			if self.lives < 1:
+				self.game_over_lose()
+			if '_' not in self.dashed_capital:
+				self.game_over_win()
 			
 			
 			
@@ -74,7 +85,7 @@ class One_Game(object):
 		os.system('clear')
 		if self.lives == 1:
 			#self.show_first = False
-			print('Capitol of {} is ?'.format(self.country))
+			print('Capital of {} is ?'.format(self.country))
 		else:
 			print('')
 		
