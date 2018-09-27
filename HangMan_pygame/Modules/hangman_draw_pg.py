@@ -21,7 +21,6 @@ class OnePlayerPG(object):
 		pygame.mixer.music.play(-1, 0.0)
 		
 		# Operators
-		# self.mouse_pos_click = [0, 0]
 		self.with_screen = 'start'
 		self.mouse_click_letter = ''
 		self.first_time_in___show_progress = True
@@ -39,7 +38,7 @@ class OnePlayerPG(object):
 		
 		# Buttons
 		self.reverse_button_click = False
-		self.reverse_button_box = pygame.Rect(560, 395, 80, 71)#todo <-------------------- #560 395 .......
+		self.reverse_button_box = pygame.Rect(560, 395, 80, 71)
 
 	
 	def run(self):
@@ -53,6 +52,7 @@ class OnePlayerPG(object):
 						running = False
 					if self.active:
 						if event.key == pygame.K_RETURN:
+							self.__play_klick_ok()
 							if self.with_screen == 'ask_w_l':
 								self.input_text = self.input_text.upper()
 								self.with_screen = self.player.guess_the_capital(self.input_text)
@@ -67,12 +67,10 @@ class OnePlayerPG(object):
 						else:
 							self.input_text += event.unicode
 				elif event.type == pygame.MOUSEBUTTONDOWN:
-					# self.mouse_pos_click = event.pos
 					if self.with_screen == 'ask_w_l':
 						for char in self.alphabet_box:
 							if self.alphabet_box[char].collidepoint(event.pos):
 								self.mouse_click_letter = char.upper()
-								self.__play_klick()
 					if self.input_box.collidepoint(event.pos):
 						self.active = not self.active
 					else:
@@ -81,8 +79,10 @@ class OnePlayerPG(object):
 					
 					if self.first_time_in___show_progress == True and self.playbatton_rect.collidepoint(event.pos):
 						self.with_screen = 'ask_w_l'
-					elif self.reverse_button_box.collidepoint(event.pos):   #if self.reverse_button_box.collidepoint(event.pos): self.reverse_button_click = False
-						self.with_screen = 'start' # TODO <----------------------------------------------
+						self.__play_klick_ok()
+					elif self.reverse_button_box.collidepoint(event.pos):
+						self.with_screen = 'start'
+						self.__play_klick_ok()
 		
 						
 					
@@ -114,11 +114,6 @@ class OnePlayerPG(object):
 			self.__draw_text('Assignment: Let\'s Hang Somebody!', 100, 100, 200, 200, 200)
 			self.__draw_text('The Hangman Game Implementation', 100, 120, 200, 200, 200)
 			self.__draw_text('Player\'s life: 5', 100, 140, 200, 200, 200)
-		
-			# TODO na eventy !!!!!!!!
-			# if (565 < mouse_click_pos[0] < 605) and (405 < mouse_click_pos[1] < 428):
-			# 	self.with_screen = 'ask_w_l'
-			#
 				
 	
 	def draw_ask_w_l(self):
@@ -199,10 +194,10 @@ class OnePlayerPG(object):
 		self.background.blit(surface, (X, Y))
 		
 		
-	def __play_klick(self, sound ='Sounds/start.wav'):
+	def __play_klick_ok(self, sound ='Sounds/play.wav'):
 		play_sound = pygame.mixer.Sound(sound)
 		play_sound.play()
-		time.sleep(0.3)
+		time.sleep(0.2)
 		play_sound.stop()
 		
 		
