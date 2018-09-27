@@ -39,7 +39,7 @@ class OnePlayerPG(object):
 		
 		# Buttons
 		self.reverse_button_click = False
-		self.reverse_button_box = pygame.Rect(560, 395, 80, 71) #560 395 .......
+		self.reverse_button_box = pygame.Rect(560, 395, 80, 71)#todo <-------------------- #560 395 .......
 
 	
 	def run(self):
@@ -59,7 +59,7 @@ class OnePlayerPG(object):
 								self.input_text = ''
 							elif self.with_screen == 'win' and self.input_text_state:
 								self.input_text = self.input_text.upper()
-								self.player.add_your_score(self.input_text) #todo <----------------------------adscore
+								self.player.add_your_score(self.input_text)
 								self.input_text = ''
 								self.input_text_state = False
 						elif event.key == pygame.K_BACKSPACE:
@@ -79,7 +79,7 @@ class OnePlayerPG(object):
 						self.active = False
 					self.color = self.color_active if self.active else self.color_inactive
 					
-					if self.playbatton_rect.collidepoint(event.pos):
+					if self.first_time_in___show_progress == True and self.playbatton_rect.collidepoint(event.pos):
 						self.with_screen = 'ask_w_l'
 					elif self.reverse_button_box.collidepoint(event.pos):   #if self.reverse_button_box.collidepoint(event.pos): self.reverse_button_click = False
 						self.with_screen = 'start' # TODO <----------------------------------------------
