@@ -1,11 +1,12 @@
+#!/usr/bin/python3.6
 import sys
 import os
 import pickle
 
-# from HangMan.from_file import random_words
-# from HangMan.one_game import One_Game
 from from_file import random_words
 from one_game import One_Game
+# from HangMan.from_file import random_words
+# from HangMan.one_game import One_Game
 
 os.system('clear')
 

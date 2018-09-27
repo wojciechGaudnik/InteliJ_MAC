@@ -21,7 +21,7 @@ class OnePlayerPG(object):
 		pygame.mixer.music.play(-1, 0.0)
 		
 		# Operators
-		self.mouse_pos_click = [0, 0]
+		# self.mouse_pos_click = [0, 0]
 		self.with_screen = 'start'
 		self.mouse_click_letter = ''
 		self.first_time_in___show_progress = True
@@ -31,15 +31,15 @@ class OnePlayerPG(object):
 		self.input_box = pygame.Rect(350, 400, 140, 32)
 		self.font = pygame.font.Font(None, 32)
 		self.input_text = ''
-		self.input_text_state = False
-		self.color_inactive = pygame.Color('lightskyblue3') # TODO kolorki popraw
-		self.color_active = pygame.Color('dodgerblue2')
+		self.input_text_state = True
+		self.color_inactive = pygame.Color(100,100,180,100)
+		self.color_active = pygame.Color(245,245,245,100)
 		self.color = self.color_inactive
 		self.active = True
 		
 		# Buttons
 		self.reverse_button_click = False
-		self.a_b_box = pygame.Rect(550, 400, 80, 71)
+		self.reverse_button_box = pygame.Rect(560, 395, 80, 71) #560 395 .......
 
 	
 	def run(self):
@@ -52,24 +52,22 @@ class OnePlayerPG(object):
 					if event.key == pygame.K_ESCAPE:
 						running = False
 					if self.active:
-						if event.key == pygame.K_RETURN: #todo -----------------------
+						if event.key == pygame.K_RETURN:
 							if self.with_screen == 'ask_w_l':
 								self.input_text = self.input_text.upper()
 								self.with_screen = self.player.guess_the_capital(self.input_text)
 								self.input_text = ''
-							elif self.with_screen == 'win':
-								print('test')
+							elif self.with_screen == 'win' and self.input_text_state:
 								self.input_text = self.input_text.upper()
-								self.player.add_your_score(self.input_text)
-								# self.with_screen = self.player.guess_the_capital(self.input_text)
+								self.player.add_your_score(self.input_text) #todo <----------------------------adscore
 								self.input_text = ''
-								self.input_text_state = True
+								self.input_text_state = False
 						elif event.key == pygame.K_BACKSPACE:
 							self.input_text = self.input_text[:-1]
 						else:
 							self.input_text += event.unicode
 				elif event.type == pygame.MOUSEBUTTONDOWN:
-					self.mouse_pos_click = event.pos #TODO patrz linijka z TODO evanty
+					# self.mouse_pos_click = event.pos
 					if self.with_screen == 'ask_w_l':
 						for char in self.alphabet_box:
 							if self.alphabet_box[char].collidepoint(event.pos):
@@ -80,10 +78,16 @@ class OnePlayerPG(object):
 					else:
 						self.active = False
 					self.color = self.color_active if self.active else self.color_inactive
-					if self.a_b_box.collidepoint(event.pos):
-						self.with_screen = 'start'
 					
-			self.draw_start(self.mouse_pos_click)
+					if self.playbatton_rect.collidepoint(event.pos):
+						self.with_screen = 'ask_w_l'
+					elif self.reverse_button_box.collidepoint(event.pos):   #if self.reverse_button_box.collidepoint(event.pos): self.reverse_button_click = False
+						self.with_screen = 'start' # TODO <----------------------------------------------
+		
+						
+					
+					
+			self.draw_start()
 			self.draw_ask_w_l()
 			self.draw_game_over()
 			
@@ -94,21 +98,27 @@ class OnePlayerPG(object):
 		pygame.quit()
 	
 	
-	def draw_start(self, mouse_click_pos):
+	def draw_start(self):
 		if self.with_screen == 'start':
+			self.input_text = ''
+			self.input_text_state = True
 			self.first_time_in___show_progress = True
-			self.player = One_Game(random_words('countries_and_capitals.txt'))
+			self.player = One_Game(random_words('Data/countries_and_capitals.txt'))
 			
 			# Graphhics
 			self.background.blit(self.background_image, (0, 0))
-			playbatton = pygame.image.load('Images/play_button.png')
-			self.background.blit(playbatton, (500, 400))
-			self.__draw_text("There we will write short story", 100, 100, 200, 200, 200) #TODO dorób historie
-			self.__draw_text("and instructions", 100, 120, 200, 200, 200)
+			playbatton = pygame.image.load('Images/play_button.png') # todo <-----------------------------------
+			self.playbatton_rect = playbatton.get_rect()
+			self.playbatton_rect.topleft = (565, 405)
+			self.background.blit(playbatton, self.playbatton_rect)#(560, 400))
+			self.__draw_text('Assignment: Let\'s Hang Somebody!', 100, 100, 200, 200, 200)
+			self.__draw_text('The Hangman Game Implementation', 100, 120, 200, 200, 200)
+			self.__draw_text('Player\'s life: 5', 100, 140, 200, 200, 200)
 		
 			# TODO na eventy !!!!!!!!
-			if (505 < mouse_click_pos[0] < 544) and (405 < mouse_click_pos[1] < 428):
-				self.with_screen = 'ask_w_l'
+			# if (565 < mouse_click_pos[0] < 605) and (405 < mouse_click_pos[1] < 428):
+			# 	self.with_screen = 'ask_w_l'
+			#
 				
 	
 	def draw_ask_w_l(self):
@@ -130,11 +140,11 @@ class OnePlayerPG(object):
 			self.__draw_hangman()
 			
 			# Whole Word
+			self.__draw_text('Write whole word above', 320, 440, 200, 200, 200)
 			self.__draw_inbox()
 	
 	def draw_game_over(self):
 		if self.with_screen == 'lose':
-			# Graphhics
 			self.background.blit(self.background_image, (0, 0))
 			self.__draw_hangman()
 			self.__draw_play_again()
@@ -143,13 +153,13 @@ class OnePlayerPG(object):
 			
 		if self.with_screen == 'win':
 			self.background.blit(self.background_image, (0, 0))
-			# self.__draw_text('Congratulation !!! you WIN !!!')
 			self.__draw_play_again()
 			self.__show_progress(True)
-			self.__draw_inbox() # TODO-------------------------------
+			self.__show_high_scores()
 			if self.input_text_state:
-				self.__show_high_scores()
-				# self.input_text_state = False
+				self.__draw_text('Write your name above', 320, 440, 200, 200, 200)
+				self.__draw_inbox()
+		
 		
 		
 	def __draw_alphabet(self):
@@ -183,9 +193,9 @@ class OnePlayerPG(object):
 				self.background.blit(self.alphabet_surface[char], self.alphabet_box[char])
 		
 		
-	def __draw_text(self, text, X = 0, Y = 0, R = 255, G = 0, B = 0, font = 20):
+	def __draw_text(self, text, X = 0, Y = 0, R = 255, G = 0, B = 0, font = 20, background = None):
 		font = pygame.font.SysFont('mono', font, bold=True)
-		surface = font.render(text, True, (R, G, B))
+		surface = font.render(text, True, (R, G, B), background)
 		self.background.blit(surface, (X, Y))
 		
 		
@@ -215,7 +225,7 @@ class OnePlayerPG(object):
 		
 	def __draw_play_again(self):
 		a_b_syrface = pygame.image.load('Images/reverse_button.png')
-		self.background.blit(a_b_syrface, self.a_b_box)
+		self.background.blit(a_b_syrface, self.reverse_button_box)
 		
 		
 	def __show_progress(self, game_over = False):
@@ -247,14 +257,7 @@ class OnePlayerPG(object):
 		
 	def __show_high_scores(self):
 		y = 0
-		pl = 1
-		self.__draw_text(self.player.display_high_score()[0], font=20)
-		for line in self.player.display_high_score()[1:]:
-			text = '{}. '.format(str(pl))
-			pl += 1
-			for li in line:
-				text += str(li)
-				text += ' | '
-			self.__draw_text(text, 5, 30 + y, font = 15)
-			y += 30
+		for line in self.player.display_high_score()[:9]:
+			self.__draw_text(line, 5, 30 + y, 255,25,0, font = 12, background=(0,0,0))
+			y += 10
 			

@@ -1,6 +1,7 @@
 from timeit import default_timer as timer
-import datetime
-import pickle
+import datetime, pickle
+from tabulate import tabulate
+
 
 class One_Game(object):
 	
@@ -16,8 +17,21 @@ class One_Game(object):
 		self.show_first = True
 		self.guessing_tries = 0
 		self.name = ''
-		self.high_scores = pickle.load(open('hangman_scores.p', 'rb'))
 		
+		# with open('Data/hangman_scores.p', 'rb') as f:
+		# 	self.high_scores = pickle.load(f)
+		# 	print(self.high_scores, '<--- po otwarciu')
+			
+		try:
+			with open('Data/hangman_scores.p', 'rb') as f:
+				self.high_scores = pickle.load(f)
+				# print(self.high_scores, '<--- po otwarciu')
+				f.close()
+		except:
+			with open('Data/hangman_scores.p', 'wb') as f:
+				pickle.dump([], f, protocol=pickle.HIGHEST_PROTOCOL)
+				f.close()
+				
 		print(self.capital_word)
 		
 		for ans in self.capital:
@@ -42,6 +56,8 @@ class One_Game(object):
 		if self.lives < 1:
 			return 'lose'
 		elif '_' not in self.dashed_capital:
+			self.time_now_sec = int((timer() - self.time_start) % 60)
+			self.time_now_min = int((timer() - self.time_start) / 60)
 			return 'win'
 		else:
 			return 'ask_w_l'
@@ -71,31 +87,30 @@ class One_Game(object):
 		show_progress.append('Guessing_tries:' + str(self.guessing_tries))
 		show_progress.append(''.join('Guessing time: {:02d} : {:02d}'.format(time_now_min, time_now_sec)))
 		show_progress.append('Answer is: ' + self.capital_word)
-		# show_progress.append(self.high_scores)
 		return show_progress
 	
 	
-	def game_over_win(self):
-		self.show_progress_hangman()
-		self.lives = 0
-		self.time_now_sec = int((timer() - self.time_start) % 60)
-		self.time_now_min = int((timer() - self.time_start) / 60)
-		print('You guessed the capital after {} tries. It took you {:02d}:{:02d} min:seconds'.
-		      format(self.guessing_tries, self.time_now_min, self.time_now_sec))
-		self.add_your_score()
+	# def game_over_win(self):
+	# 	self.show_progress_hangman()
+	# 	self.lives = 0
+	# 	self.time_now_sec = int((timer() - self.time_start) % 60)
+	# 	self.time_now_min = int((timer() - self.time_start) / 60)
+	# 	print('You guessed the capital after {} tries. It took you {:02d}:{:02d} min:seconds'.
+	# 	      format(self.guessing_tries, self.time_now_min, self.time_now_sec))
+	# 	self.add_your_score()
 
 
 	def add_your_score(self, name):
-		# self.name = input('What is your name? ')
 		self.name = name
-		print(self.name)
-		your_score = [self.name, datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), '{:02d}:{:02d} min:sec'.format(self.time_now_min, self.time_now_sec), self.guessing_tries, self.capital_word]
+		your_score = ['{:02d}:{:02d} min:sec'.format(self.time_now_min, self.time_now_sec), self.name, self.guessing_tries, self.capital_word, datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")]
 		high_score = self.high_scores
 		high_score.append(your_score)
-		high_score.sort(key = lambda x: x[2])
-		pickle.dump(high_score, open('hangman_scores.p', 'wb'))
-		print('end add score')
-		# self.display_high_score()
+		high_score.sort(key = lambda x: x[0])
+		f = open('Data/hangman_scores.p', 'wb')
+		pickle.dump(high_score, f) #TODO try i zamknij
+		f.close()
+		print(self.high_scores, '<--------------------------------------------------------- zapisane')
+		self.display_high_score()
 
 
 	# def display_high_score(self):
@@ -103,18 +118,24 @@ class One_Game(object):
 	# 	for line in self.high_scores[:10]:
 	# 		print((line[2] + ' - ' + line[0] + ' - ' + str(line[3]) + ' - ' + line[4] + ' - ' + line[1]))
 			
-	def display_high_score(self):
-		high_score = []
-		high_score.append("Top Scores:")
-		for line in self.high_scores[:3]: #todo <----------------------- dodaj limit wyświetlanych wynikóœ
-			high_score.append(line)
-		print('end display high score')
-		return high_score
+	# def display_high_score(self):
+		# high_score = []
+		# high_score.append("Top Scores:")
+		# for line in self.high_scores[:3]:
+		# 	high_score.append(line)
+		# print('end display high score')
+		# return high_score
 		# print("Top Scores:")
 		# for line in self.high_scores[:10]:
 		# 	print((line[2] + ' - ' + '{:<15s}' + ' - ' + str(line[3]) + ' tries - ' + '{:<15s}' + ' - ' + line[1])
 		# 	      .format(line[0], line[4]))
-
+		
+	def display_high_score(self):#todo --------------------------------------
+		score_table = tabulate(self.high_scores[:10], headers=['TIME', 'PLAYER', 'TRIES', 'CAPITAL', 'DATE'],
+		                       tablefmt='grid')
+		# print(score_table)
+		score_table = score_table.split('\n')
+		return score_table
 
 	def game_over_lose(self):
 		self.show_progress_hangman()

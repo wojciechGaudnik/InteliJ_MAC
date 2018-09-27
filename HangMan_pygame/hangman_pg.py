@@ -4,9 +4,9 @@ import sys
 # from HangMan_pygame.hang_pygame import OnePlayerPG
 from HangMan_pygame.Modules.hangman_draw_pg import OnePlayerPG
 
-# TODO dlaczego zapiklowana jest lista w liscie ?
+# TODO tra do load file, inicjowanie pustego pliku
 # TODO dashed_word na graiczki
-# TODO inbox do high score i do końca high score
+
 
 OnePlayerPG().run()
 sys.exit()
