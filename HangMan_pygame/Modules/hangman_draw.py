@@ -1,5 +1,5 @@
 import pygame, time
-from HangMan_pygame.Modules.one_game_pg import One_Game
+from HangMan_pygame.Modules.hangman_logic import One_Game
 from HangMan_pygame.Modules.from_file_pg import random_words
 
 
@@ -30,8 +30,9 @@ class OnePlayerPG(object):
 		# Inbox
 		self.input_box = pygame.Rect(350, 400, 140, 32)
 		self.font = pygame.font.Font(None, 32)
-		self.text = ''
-		self.color_inactive = pygame.Color('lightskyblue3')
+		self.input_text = ''
+		self.input_text_state = False
+		self.color_inactive = pygame.Color('lightskyblue3') # TODO kolorki popraw
 		self.color_active = pygame.Color('dodgerblue2')
 		self.color = self.color_inactive
 		self.active = True
@@ -51,14 +52,22 @@ class OnePlayerPG(object):
 					if event.key == pygame.K_ESCAPE:
 						running = False
 					if self.active:
-						if event.key == pygame.K_RETURN:
-							self.text = self.text.upper()
-							self.with_screen = self.player.guess_the_capital(self.text)
-							self.text = ''
+						if event.key == pygame.K_RETURN: #todo -----------------------
+							if self.with_screen == 'ask_w_l':
+								self.input_text = self.input_text.upper()
+								self.with_screen = self.player.guess_the_capital(self.input_text)
+								self.input_text = ''
+							elif self.with_screen == 'win':
+								print('test')
+								self.input_text = self.input_text.upper()
+								self.player.add_your_score(self.input_text)
+								# self.with_screen = self.player.guess_the_capital(self.input_text)
+								self.input_text = ''
+								self.input_text_state = True
 						elif event.key == pygame.K_BACKSPACE:
-							self.text = self.text[:-1]
+							self.input_text = self.input_text[:-1]
 						else:
-							self.text += event.unicode
+							self.input_text += event.unicode
 				elif event.type == pygame.MOUSEBUTTONDOWN:
 					self.mouse_pos_click = event.pos #TODO patrz linijka z TODO evanty
 					if self.with_screen == 'ask_w_l':
@@ -94,7 +103,7 @@ class OnePlayerPG(object):
 			self.background.blit(self.background_image, (0, 0))
 			playbatton = pygame.image.load('Images/play_button.png')
 			self.background.blit(playbatton, (500, 400))
-			self.__draw_text("There we will write short story", 100, 100, 200, 200, 200)
+			self.__draw_text("There we will write short story", 100, 100, 200, 200, 200) #TODO dorób historie
 			self.__draw_text("and instructions", 100, 120, 200, 200, 200)
 		
 			# TODO na eventy !!!!!!!!
@@ -134,10 +143,13 @@ class OnePlayerPG(object):
 			
 		if self.with_screen == 'win':
 			self.background.blit(self.background_image, (0, 0))
-			self.__draw_text('Congratulation !!! you WIN !!!')
+			# self.__draw_text('Congratulation !!! you WIN !!!')
 			self.__draw_play_again()
 			self.__show_progress(True)
-			self.__show_high_scores()
+			self.__draw_inbox() # TODO-------------------------------
+			if self.input_text_state:
+				self.__show_high_scores()
+				# self.input_text_state = False
 		
 		
 	def __draw_alphabet(self):
@@ -171,8 +183,8 @@ class OnePlayerPG(object):
 				self.background.blit(self.alphabet_surface[char], self.alphabet_box[char])
 		
 		
-	def __draw_text(self, text, X = 0, Y = 0, R = 255, G = 0, B = 0):
-		font = pygame.font.SysFont('mono', 20, bold=True)
+	def __draw_text(self, text, X = 0, Y = 0, R = 255, G = 0, B = 0, font = 20):
+		font = pygame.font.SysFont('mono', font, bold=True)
 		surface = font.render(text, True, (R, G, B))
 		self.background.blit(surface, (X, Y))
 		
@@ -194,7 +206,7 @@ class OnePlayerPG(object):
 		
 
 	def __draw_inbox(self):
-		self.txt_surface = self.font.render(self.text, True, self.color)
+		self.txt_surface = self.font.render(self.input_text, True, self.color)
 		width = max(200, self.txt_surface.get_width() + 10)
 		self.input_box.w = width
 		self.background.blit(self.txt_surface, (self.input_box.x + 5, self.input_box.y + 5))
@@ -234,19 +246,15 @@ class OnePlayerPG(object):
 		
 		
 	def __show_high_scores(self):
-		print('-----------')
-		print(type(self.player.high_scores[0]))
-		# a = ''.join(self.player.high_scores[0])
-		a = ''
-		for i in self.player.high_scores[0]:
-			a += str(i)
-			a += ' '
-		self.__draw_text(a, 5, 30)
-		print(a)
-		# for line in self.player.high_scores:
-		# 	pass
-		# li
-		# for li in line:
-		# 	print(li)
-		print('----------------------')
-		pass
+		y = 0
+		pl = 1
+		self.__draw_text(self.player.display_high_score()[0], font=20)
+		for line in self.player.display_high_score()[1:]:
+			text = '{}. '.format(str(pl))
+			pl += 1
+			for li in line:
+				text += str(li)
+				text += ' | '
+			self.__draw_text(text, 5, 30 + y, font = 15)
+			y += 30
+			

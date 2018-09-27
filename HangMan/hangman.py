@@ -13,6 +13,7 @@ os.system('clear')
 
 player = One_Game(random_words('countries_and_capitals.txt'))
 
+
 answer_l_w = ''
 while answer_l_w != 'l' and answer_l_w != 'w' and answer_l_w != 'q':
 	if player.lives <= 0:

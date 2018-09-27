@@ -2,7 +2,7 @@
 import sys
 
 # from HangMan_pygame.hang_pygame import OnePlayerPG
-from HangMan_pygame.hang_class_pg import OnePlayerPG
+from HangMan_pygame.Modules.hangman_draw import OnePlayerPG
 
 # TODO dlaczego zapiklowana jest lista w liscie ?
 # TODO dashed_word na graiczki
