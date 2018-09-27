@@ -58,7 +58,7 @@ class One_Game(object):
 							self.dashed_capital[num] = ans
 							self.capital[num] = '*'
 					elif ans in self.capital_buff:
-						print('This letter was already guessed, press any key')
+						print('This letter was already guessed, press Enter')
 						input()
 						self.lives -= 1
 					else:
@@ -83,11 +83,6 @@ class One_Game(object):
 	
 	def show_progress_hangman(self):
 		os.system('clear')
-		if self.lives == 1:
-			#self.show_first = False
-			print('Capital of {} is ?'.format(self.country))
-		else:
-			print('')
 		
 		self.hag_graf.show_hangman(self.lives)
 		print('Capital: ',' '.join(self.dashed_capital))
@@ -99,6 +94,12 @@ class One_Game(object):
 		print('{:02d}'.format(time_now_min), end='')
 		print(':', end='')
 		print('{:02d}'.format(time_now_sec))
+		if self.lives == 1:
+			#self.show_first = False
+			print('Capital of {} is ?'.format(self.country))
+			print('')
+		else:
+			print('')
 		# print('You gessing: ' + str(int(time_now_min)) + ':' + str(int(time_now_sec)))
 	
 	def game_over_win(self):
@@ -126,7 +127,7 @@ class One_Game(object):
 
 	def game_over_lose(self):
 		self.show_progress_hangman()
-		print('\nYOU LOSE\n')
+		print('\nYOU LOSE\nCorrect answer was: ' + self.capital_word)
 		self.display_high_score()	
 	
 	def print_w(self):
