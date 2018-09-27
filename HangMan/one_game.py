@@ -33,12 +33,10 @@ class One_Game(object):
 			else:
 				self.dashed_capital += ' '
 		#self.dashed_capital = list(self.dashed_capital)
-		
-	
+			
 	def guess_the_letter(self):
 		self.guessing_tries += 1
-		alphabet = ('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T',
-		            'U', 'V', 'W', 'X', 'Y', 'Z')
+		alphabet = ('A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z')
 		ans = input("letter:").capitalize()
 		if len(ans) > 1:
 			print('Enter one letter only')
@@ -69,9 +67,7 @@ class One_Game(object):
 				self.game_over_lose()
 			if '_' not in self.dashed_capital:
 				self.game_over_win()
-			
-			
-			
+	
 	def guess_the_capital(self):
 		self.guessing_tries += 1
 		ans = input("Capital:").upper()
@@ -81,6 +77,8 @@ class One_Game(object):
 			print('It is not correct, press Enter')
 			input()
 			self.lives -= 2
+		if self.lives < 1:
+			self.game_over_lose()
 	
 	def show_progress_hangman(self):
 		os.system('clear')
@@ -107,7 +105,7 @@ class One_Game(object):
 		self.lives = 0
 		self.time_now_sec = int((timer() - self.time_start) % 60)
 		self.time_now_min = int((timer() - self.time_start) / 60)
-		print('You guessed the capital after {} tries. It took you {:02d}:{:02d} min:seconds'.
+		print('\nYou guessed the capital after {} tries. It took you {:02d}:{:02d} min:seconds\n'.
 		      format(self.guessing_tries, self.time_now_min, self.time_now_sec))
 		self.add_your_score()
 
@@ -121,17 +119,13 @@ class One_Game(object):
 		self.display_high_score()
 
 	def display_high_score(self):
-		score_table = tabulate(self.high_scores)
+		score_table = tabulate(self.high_scores[:5], headers = ['TIME', 'PLAYER', 'TRIES', 'CAPITAL', 'DATE'], tablefmt = 'grid')
 		print(score_table)
 		return score_table
-		# print("Top Scores:")
-		# for line in self.high_scores[:10]:
-		# 	print((line[2] + ' - ' + '{:<15s}' + ' - ' + str(line[3]) + ' tries - ' + '{:<15s}' + ' - ' + line[1])
-		# 	      .format(line[0], line[4]))
 
 	def game_over_lose(self):
 		self.show_progress_hangman()
-		print('lose')
+		print('\nYOU LOSE\n')
 		self.display_high_score()	
 	
 	def print_w(self):
