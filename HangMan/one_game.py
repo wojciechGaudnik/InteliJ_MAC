@@ -25,6 +25,16 @@ class One_Game(object):
 		self.name = ''
 		self.high_scores = pickle.load(open('hangman_scores.p', 'rb'))
 
+		try:
+			with open('hangman_scores.p', 'rb') as f:
+				self.high_scores = pickle.load(f)
+				# print(self.high_scores, '<--- po otwarciu')
+				f.close()
+		except:
+			with open('hangman_scores.p', 'wb') as f:
+				pickle.dump([], f, protocol=pickle.HIGHEST_PROTOCOL)
+				f.close()
+
 		print(self.capital_word)
 		input('')
 
@@ -121,7 +131,7 @@ class One_Game(object):
 		self.display_high_score()
 
 	def display_high_score(self):
-		score_table = tabulate(self.high_scores[:5], headers = ['TIME', 'PLAYER', 'TRIES', 'CAPITAL', 'DATE'], tablefmt = 'grid')
+		score_table = tabulate(self.high_scores[:10], headers = ['TIME', 'PLAYER', 'TRIES', 'CAPITAL', 'DATE'], tablefmt = 'grid')
 		print(score_table)
 		return score_table
 
