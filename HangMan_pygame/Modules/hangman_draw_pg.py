@@ -108,7 +108,7 @@ class OnePlayerPG(object):
 			
 			# Graphhics
 			self.background.blit(self.background_image, (0, 0))
-			playbatton = pygame.image.load('Images/play_button.png') # todo <-----------------------------------
+			playbatton = pygame.image.load('Images/play_button.png')
 			self.playbatton_rect = playbatton.get_rect()
 			self.playbatton_rect.topleft = (565, 405)
 			self.background.blit(playbatton, self.playbatton_rect)#(560, 400))
