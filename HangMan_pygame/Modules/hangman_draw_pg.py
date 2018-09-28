@@ -65,7 +65,8 @@ class OnePlayerPG(object):
 						elif event.key == pygame.K_BACKSPACE:
 							self.input_text = self.input_text[:-1]
 						else:
-							self.input_text += event.unicode
+							if len(self.input_text) < 20:
+								self.input_text += event.unicode
 				elif event.type == pygame.MOUSEBUTTONDOWN:
 					if self.with_screen == 'ask_w_l':
 						for char in self.alphabet_box:
