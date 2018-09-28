@@ -23,7 +23,6 @@ class One_Game(object):
 		try:
 			with open('Data/hangman_scores.p', 'rb') as f:
 				self.high_scores = pickle.load(f)
-				# print(self.high_scores, '<--- po otwarciu')
 				f.close()
 		except:
 			with open('Data/hangman_scores.p', 'wb') as f:
@@ -102,7 +101,7 @@ class One_Game(object):
 		self.display_high_score()
 	
 		
-	def display_high_score(self):#todo --------------------------------------
+	def display_high_score(self):
 		score_table = tabulate(self.high_scores[:10], headers=['TIME', 'PLAYER', 'TRIES', 'CAPITAL', 'DATE'],
 		                       tablefmt='grid')
 		score_table = score_table.split('\n')
