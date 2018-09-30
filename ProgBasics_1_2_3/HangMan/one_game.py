@@ -36,7 +36,7 @@ class One_Game(object):
 				f.close()
 
 		print(self.capital_word)
-		input('')
+		# input('')
 
 		for ans in self.capital:
 			if ans != ' ':
