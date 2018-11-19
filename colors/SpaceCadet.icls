@@ -191,8 +191,21 @@
         <option name="FONT_TYPE" value="1" />
       </value>
     </option>
+    <option name="DEFAULT_CLASS_NAME">
+      <value>
+        <option name="FOREGROUND" value="4bff" />
+        <option name="FONT_TYPE" value="1" />
+      </value>
+    </option>
+    <option name="DEFAULT_CLASS_REFERENCE">
+      <value>
+        <option name="FOREGROUND" value="4bff" />
+      </value>
+    </option>
     <option name="DEFAULT_KEYWORD">
-      <value />
+      <value>
+        <option name="FOREGROUND" value="ff0053" />
+      </value>
     </option>
     <option name="DEFAULT_STATIC_FIELD" baseAttributes="DEFAULT_IDENTIFIER" />
     <option name="DEFAULT_STRING">
@@ -475,7 +488,7 @@
     </option>
     <option name="JAVA_KEYWORD">
       <value>
-        <option name="FOREGROUND" value="728059" />
+        <option name="FOREGROUND" value="ff0053" />
       </value>
     </option>
     <option name="JAVA_LINE_COMMENT">
@@ -495,7 +508,7 @@
     </option>
     <option name="JAVA_STRING">
       <value>
-        <option name="FOREGROUND" value="805978" />
+        <option name="FOREGROUND" value="8000" />
       </value>
     </option>
     <option name="JAVA_VALID_STRING_ESCAPE">
