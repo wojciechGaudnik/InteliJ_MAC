@@ -218,6 +218,12 @@
         <option name="FOREGROUND" value="e6d444" />
       </value>
     </option>
+    <option name="DEFAULT_INSTANCE_METHOD">
+      <value>
+        <option name="FOREGROUND" value="cfe200" />
+        <option name="FONT_TYPE" value="1" />
+      </value>
+    </option>
     <option name="DEFAULT_KEYWORD">
       <value>
         <option name="FOREGROUND" value="ff0053" />
@@ -479,12 +485,7 @@
         <option name="BACKGROUND" value="ededed" />
       </value>
     </option>
-    <option name="INSTANCE_FIELD_ATTRIBUTES">
-      <value>
-        <option name="FOREGROUND" value="fda5ff" />
-        <option name="FONT_TYPE" value="1" />
-      </value>
-    </option>
+    <option name="INSTANCE_FIELD_ATTRIBUTES" baseAttributes="DEFAULT_INSTANCE_FIELD" />
     <option name="JAVA_BLOCK_COMMENT">
       <value>
         <option name="FOREGROUND" value="473c45" />
@@ -1135,7 +1136,12 @@
     </option>
     <option name="STATIC_FIELD_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="fda5ff" />
+        <option name="FOREGROUND" value="0" />
+      </value>
+    </option>
+    <option name="STATIC_FINAL_FIELD_ATTRIBUTES">
+      <value>
+        <option name="FOREGROUND" value="e6d444" />
         <option name="FONT_TYPE" value="3" />
       </value>
     </option>
