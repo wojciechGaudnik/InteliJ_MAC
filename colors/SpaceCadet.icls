@@ -786,6 +786,11 @@
         <option name="FOREGROUND" value="80807f" />
       </value>
     </option>
+    <option name="OC.NUMBER">
+      <value>
+        <option name="FOREGROUND" value="a8885a" />
+      </value>
+    </option>
     <option name="PY.BUILTIN_NAME">
       <value>
         <option name="FOREGROUND" value="8a4b66" />
