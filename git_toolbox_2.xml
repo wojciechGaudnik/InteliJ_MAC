@@ -1,5 +1,9 @@
 <application>
   <component name="GitToolBoxAppSettings2">
+    <option name="showStatusWidget" value="false" />
+    <option name="showProjectViewStatus" value="false" />
+    <option name="showBlameWidget" value="false" />
+    <option name="showEditorInlineBlame" value="false" />
     <option name="decorationParts">
       <list>
         <DecorationPartConfig>
