@@ -16,6 +16,7 @@
       <mapping pattern="*.js.flow" type="Flow" />
       <mapping pattern="HelloWorld" type="JAVA" />
       <mapping pattern="Tutorial" type="JAVA" />
+      <mapping ext="gradle.kts" type="Kotlin" />
       <mapping pattern="data-postgres" type="SQL" />
     </extensionMap>
   </component>
