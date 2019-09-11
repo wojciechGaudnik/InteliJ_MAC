@@ -3,6 +3,15 @@
     <option name="CARET_COLOR" value="fc0200" />
     <option name="CARET_ROW_COLOR" value="353436" />
     <option name="CONSOLE_BACKGROUND_KEY" value="80b0c" />
+    <option name="DIAGRAM_ANNOTATION_EDGE" value="3c3f41" />
+    <option name="DIAGRAM_DEFAULT_EDGE" value="3c3f41" />
+    <option name="DIAGRAM_GENERALIZATION_EDGE" value="3c3f41" />
+    <option name="DIAGRAM_NODE_BACKGROUND" value="3b79ff" />
+    <option name="DIAGRAM_NODE_HEADER" value="ff" />
+    <option name="DIAGRAM_NOTE_BACKGROUND" value="0" />
+    <option name="DIAGRAM_NOTE_BORDER" value="0" />
+    <option name="DIAGRAM_REALIZATION_EDGE" value="" />
+    <option name="DOCUMENTATION_COLOR" value="3c3f41" />
     <option name="GUTTER_BACKGROUND" value="d0d0d" />
     <option name="INDENT_GUIDE" value="3c3f41" />
     <option name="LINE_NUMBERS_COLOR" value="819090" />

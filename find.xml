@@ -1,7 +1,7 @@
 <application>
   <component name="FindSettings">
-    <option name="customScope" value="Directory '... [battleship]'" />
-    <option name="defaultScopeName" value="Directory '... [battleship]'" />
-    <option name="SEARCH_SCOPE" value="Directory '... [battleship]'" />
+    <option name="customScope" value="Project 'SpringBasic'" />
+    <option name="defaultScopeName" value="Project 'SpringBasic'" />
+    <option name="SEARCH_SCOPE" value="Project 'SpringBasic'" />
   </component>
 </application>
