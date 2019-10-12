@@ -21,23 +21,8 @@
     <option name="WHITESPACES" value="bfbfbf" />
   </colors>
   <attributes>
-    <option name="ABSTRACT_CLASS_NAME_ATTRIBUTES">
-      <value>
-        <option name="FOREGROUND" value="4bff" />
-        <option name="FONT_TYPE" value="1" />
-      </value>
-    </option>
-    <option name="ABSTRACT_METHOD_ATTRIBUTES">
-      <value>
-        <option name="FOREGROUND" value="cfe200" />
-      </value>
-    </option>
-    <option name="ANONYMOUS_CLASS_NAME_ATTRIBUTES">
-      <value>
-        <option name="FOREGROUND" value="4bff" />
-        <option name="FONT_TYPE" value="1" />
-      </value>
-    </option>
+    <option name="ANNOTATION_ATTRIBUTE_NAME_ATTRIBUTES" baseAttributes="DEFAULT_METADATA" />
+    <option name="ANNOTATION_NAME_ATTRIBUTES" baseAttributes="DEFAULT_METADATA" />
     <option name="BAD_CHARACTER">
       <value>
         <option name="BACKGROUND" value="5f0047" />
@@ -79,12 +64,6 @@
         <option name="FOREGROUND" value="805978" />
       </value>
     </option>
-    <option name="CLASS_NAME_ATTRIBUTES">
-      <value>
-        <option name="FOREGROUND" value="4bff" />
-        <option name="FONT_TYPE" value="1" />
-      </value>
-    </option>
     <option name="CONSOLE_ERROR_OUTPUT">
       <value>
         <option name="FOREGROUND" value="ff1c19" />
@@ -104,16 +83,6 @@
       <value>
         <option name="FOREGROUND" value="6ae96a" />
         <option name="FONT_TYPE" value="2" />
-      </value>
-    </option>
-    <option name="CONSTRUCTOR_CALL_ATTRIBUTES">
-      <value>
-        <option name="FOREGROUND" value="cfe200" />
-      </value>
-    </option>
-    <option name="CONSTRUCTOR_DECLARATION_ATTRIBUTES">
-      <value>
-        <option name="FOREGROUND" value="cfe200" />
       </value>
     </option>
     <option name="CSS.COMMENT">
@@ -363,12 +332,6 @@
         <option name="BACKGROUND" value="30322b" />
       </value>
     </option>
-    <option name="ENUM_NAME_ATTRIBUTES">
-      <value>
-        <option name="FOREGROUND" value="4bff" />
-        <option name="FONT_TYPE" value="1" />
-      </value>
-    </option>
     <option name="ERRORS_ATTRIBUTES">
       <value>
         <option name="EFFECT_COLOR" value="ff6767" />
@@ -483,6 +446,9 @@
         <option name="FONT_TYPE" value="1" />
       </value>
     </option>
+    <option name="HTML_CODE">
+      <value />
+    </option>
     <option name="HTML_COMMENT">
       <value>
         <option name="FOREGROUND" value="80807f" />
@@ -519,21 +485,12 @@
         <option name="ERROR_STRIPE_COLOR" value="ccccff" />
       </value>
     </option>
-    <option name="IMPLICIT_ANONYMOUS_CLASS_PARAMETER_ATTRIBUTES">
-      <value>
-        <option name="FOREGROUND" value="fda5ff" />
-      </value>
-    </option>
+    <option name="IMPLICIT_ANONYMOUS_CLASS_PARAMETER_ATTRIBUTES" baseAttributes="CLASS_NAME_ATTRIBUTES" />
     <option name="INFO_ATTRIBUTES">
       <value>
         <option name="EFFECT_COLOR" value="333434" />
         <option name="ERROR_STRIPE_COLOR" value="ffffcc" />
         <option name="EFFECT_TYPE" value="2" />
-      </value>
-    </option>
-    <option name="INHERITED_METHOD_ATTRIBUTES">
-      <value>
-        <option name="FOREGROUND" value="cfe200" />
       </value>
     </option>
     <option name="INJECTED_LANGUAGE_FRAGMENT">
@@ -547,80 +504,7 @@
         <option name="BACKGROUND" value="ededed" />
       </value>
     </option>
-    <option name="INSTANCE_FIELD_ATTRIBUTES">
-      <value>
-        <option name="FOREGROUND" value="e6d444" />
-      </value>
-    </option>
-    <option name="INSTANCE_FINAL_FIELD_ATTRIBUTES">
-      <value>
-        <option name="FOREGROUND" value="e6d444" />
-      </value>
-    </option>
-    <option name="INTERFACE_NAME_ATTRIBUTES">
-      <value>
-        <option name="FOREGROUND" value="4bff" />
-      </value>
-    </option>
-    <option name="JAVA_BLOCK_COMMENT">
-      <value>
-        <option name="FOREGROUND" value="473c45" />
-      </value>
-    </option>
-    <option name="JAVA_DOC_COMMENT">
-      <value>
-        <option name="FOREGROUND" value="473c45" />
-      </value>
-    </option>
-    <option name="JAVA_DOC_MARKUP">
-      <value>
-        <option name="BACKGROUND" value="223f22" />
-      </value>
-    </option>
-    <option name="JAVA_DOC_TAG">
-      <value>
-        <option name="FONT_TYPE" value="1" />
-        <option name="EFFECT_COLOR" value="80807f" />
-        <option name="EFFECT_TYPE" value="1" />
-      </value>
-    </option>
-    <option name="JAVA_INVALID_STRING_ESCAPE">
-      <value>
-        <option name="BACKGROUND" value="5f0047" />
-      </value>
-    </option>
-    <option name="JAVA_KEYWORD">
-      <value>
-        <option name="FOREGROUND" value="ff0053" />
-      </value>
-    </option>
-    <option name="JAVA_LINE_COMMENT">
-      <value>
-        <option name="FOREGROUND" value="473c45" />
-      </value>
-    </option>
-    <option name="JAVA_NUMBER">
-      <value>
-        <option name="FOREGROUND" value="a8885a" />
-      </value>
-    </option>
-    <option name="JAVA_OPERATION_SIGN">
-      <value>
-        <option name="FOREGROUND" value="e64c00" />
-        <option name="FONT_TYPE" value="1" />
-        <option name="EFFECT_TYPE" value="1" />
-      </value>
-    </option>
-    <option name="JAVA_STRING">
-      <value>
-        <option name="FOREGROUND" value="8000" />
-      </value>
-    </option>
-    <option name="JAVA_VALID_STRING_ESCAPE">
-      <value>
-        <option name="FOREGROUND" value="a8885a" />
-      </value>
-    </option>
+    <option name="INSTANCE_FIELD_ATTRIBUTES" baseAttributes="DEFAULT_INSTANCE_FIELD" />
     <option name="JS.ATTRIBUTE">
       <value>
         <option name="BACKGROUND" value="423535" />
@@ -729,6 +613,9 @@
         <option name="FOREGROUND" value="a8885a" />
       </value>
     </option>
+    <option name="KOTLIN_LABEL">
+      <value />
+    </option>
     <option name="LESS_VARIABLE">
       <value>
         <option name="FOREGROUND" value="ffa4ff" />
@@ -770,19 +657,9 @@
         <option name="FOREGROUND" value="805978" />
       </value>
     </option>
-    <option name="LOCAL_VARIABLE_ATTRIBUTES">
+    <option name="MATCHED_BRACE_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="e6d444" />
-      </value>
-    </option>
-    <option name="METHOD_CALL_ATTRIBUTES">
-      <value>
-        <option name="FOREGROUND" value="cfe200" />
-      </value>
-    </option>
-    <option name="METHOD_DECLARATION_ATTRIBUTES">
-      <value>
-        <option name="FOREGROUND" value="cfe200" />
+        <option name="BACKGROUND" value="3b514d" />
         <option name="FONT_TYPE" value="1" />
       </value>
     </option>
@@ -897,11 +774,6 @@
     <option name="PY.VALID_STRING_ESCAPE">
       <value>
         <option name="FOREGROUND" value="a8885a" />
-      </value>
-    </option>
-    <option name="REASSIGNED_LOCAL_VARIABLE_ATTRIBUTES">
-      <value>
-        <option name="EFFECT_TYPE" value="1" />
       </value>
     </option>
     <option name="REGEXP.BAD_CHARACTER">
@@ -1238,37 +1110,8 @@
         <option name="FOREGROUND" value="fda5ff" />
       </value>
     </option>
-    <option name="STATIC_FIELD_ATTRIBUTES">
-      <value>
-        <option name="FOREGROUND" value="e6d444" />
-      </value>
-    </option>
-    <option name="STATIC_FIELD_IMPORTED_ATTRIBUTES">
-      <value>
-        <option name="FOREGROUND" value="e6d444" />
-      </value>
-    </option>
-    <option name="STATIC_FINAL_FIELD_ATTRIBUTES">
-      <value>
-        <option name="FOREGROUND" value="e6d444" />
-      </value>
-    </option>
-    <option name="STATIC_FINAL_FIELD_IMPORTED_ATTRIBUTES">
-      <value>
-        <option name="FOREGROUND" value="e6d444" />
-      </value>
-    </option>
-    <option name="STATIC_METHOD_ATTRIBUTES">
-      <value>
-        <option name="FOREGROUND" value="cfe200" />
-      </value>
-    </option>
-    <option name="STATIC_METHOD_IMPORTED_ATTRIBUTES">
-      <value>
-        <option name="FOREGROUND" value="cfe200" />
-        <option name="FONT_TYPE" value="2" />
-      </value>
-    </option>
+    <option name="STATIC_FIELD_ATTRIBUTES" baseAttributes="DEFAULT_STATIC_FIELD" />
+    <option name="STATIC_FINAL_FIELD_ATTRIBUTES" baseAttributes="STATIC_FIELD_ATTRIBUTES" />
     <option name="TEXT">
       <value>
         <option name="FOREGROUND" value="e6d444" />
@@ -1288,6 +1131,7 @@
         <option name="ERROR_STRIPE_COLOR" value="ff" />
       </value>
     </option>
+    <option name="TYPE_PARAMETER_NAME_ATTRIBUTES" baseAttributes="DEFAULT_PARAMETER" />
     <option name="WARNING_ATTRIBUTES">
       <value>
         <option name="BACKGROUND" value="4a3f10" />
