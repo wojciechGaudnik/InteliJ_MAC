@@ -21,6 +21,12 @@
     <option name="WHITESPACES" value="bfbfbf" />
   </colors>
   <attributes>
+    <option name="ABSTRACT_CLASS_NAME_ATTRIBUTES">
+      <value>
+        <option name="FOREGROUND" value="4274ff" />
+        <option name="FONT_TYPE" value="1" />
+      </value>
+    </option>
     <option name="ANGLE_BRACKETS_RAINBOW_COLOR0">
       <value>
         <option name="FOREGROUND" value="e6d444" />
@@ -48,6 +54,12 @@
     </option>
     <option name="ANNOTATION_ATTRIBUTE_NAME_ATTRIBUTES" baseAttributes="DEFAULT_METADATA" />
     <option name="ANNOTATION_NAME_ATTRIBUTES" baseAttributes="DEFAULT_METADATA" />
+    <option name="ANONYMOUS_CLASS_NAME_ATTRIBUTES">
+      <value>
+        <option name="FOREGROUND" value="4bff" />
+        <option name="FONT_TYPE" value="1" />
+      </value>
+    </option>
     <option name="BAD_CHARACTER">
       <value>
         <option name="BACKGROUND" value="5f0047" />
@@ -108,6 +120,12 @@
       <value>
         <option name="FOREGROUND" value="6ae96a" />
         <option name="FONT_TYPE" value="2" />
+      </value>
+    </option>
+    <option name="CONSTRUCTOR_CALL_ATTRIBUTES">
+      <value>
+        <option name="FOREGROUND" value="4bff" />
+        <option name="FONT_TYPE" value="1" />
       </value>
     </option>
     <option name="CSS.COMMENT">
@@ -239,12 +257,13 @@
     </option>
     <option name="DEFAULT_FUNCTION_CALL">
       <value>
-        <option name="FOREGROUND" value="cfe200" />
+        <option name="FOREGROUND" value="ff5a01" />
+        <option name="FONT_TYPE" value="1" />
       </value>
     </option>
     <option name="DEFAULT_FUNCTION_DECLARATION">
       <value>
-        <option name="FOREGROUND" value="cfe200" />
+        <option name="FOREGROUND" value="ff5a01" />
         <option name="FONT_TYPE" value="1" />
       </value>
     </option>
@@ -381,6 +400,12 @@
     <option name="DUPLICATE_FROM_SERVER">
       <value>
         <option name="BACKGROUND" value="30322b" />
+      </value>
+    </option>
+    <option name="ENUM_NAME_ATTRIBUTES">
+      <value>
+        <option name="FOREGROUND" value="4bff" />
+        <option name="FONT_TYPE" value="1" />
       </value>
     </option>
     <option name="ERRORS_ATTRIBUTES">
@@ -556,6 +581,17 @@
       </value>
     </option>
     <option name="INSTANCE_FIELD_ATTRIBUTES" baseAttributes="DEFAULT_INSTANCE_FIELD" />
+    <option name="INSTANCE_FINAL_FIELD_ATTRIBUTES">
+      <value>
+        <option name="FOREGROUND" value="ff8bd7" />
+      </value>
+    </option>
+    <option name="INTERFACE_NAME_ATTRIBUTES">
+      <value>
+        <option name="FOREGROUND" value="5eb2ff" />
+        <option name="FONT_TYPE" value="1" />
+      </value>
+    </option>
     <option name="JS.ATTRIBUTE">
       <value>
         <option name="BACKGROUND" value="423535" />
@@ -1237,7 +1273,11 @@
       </value>
     </option>
     <option name="STATIC_FIELD_ATTRIBUTES" baseAttributes="DEFAULT_STATIC_FIELD" />
-    <option name="STATIC_FINAL_FIELD_ATTRIBUTES" baseAttributes="STATIC_FIELD_ATTRIBUTES" />
+    <option name="STATIC_FINAL_FIELD_ATTRIBUTES">
+      <value>
+        <option name="FOREGROUND" value="ff8bd7" />
+      </value>
+    </option>
     <option name="TEXT">
       <value>
         <option name="FOREGROUND" value="b09e40" />
@@ -1257,7 +1297,11 @@
         <option name="ERROR_STRIPE_COLOR" value="ff" />
       </value>
     </option>
-    <option name="TYPE_PARAMETER_NAME_ATTRIBUTES" baseAttributes="DEFAULT_PARAMETER" />
+    <option name="TYPE_PARAMETER_NAME_ATTRIBUTES">
+      <value>
+        <option name="FOREGROUND" value="54ff8a" />
+      </value>
+    </option>
     <option name="WARNING_ATTRIBUTES">
       <value>
         <option name="BACKGROUND" value="4a3f10" />
