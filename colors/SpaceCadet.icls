@@ -1,4 +1,9 @@
 <scheme name="SpaceCadet" version="142" parent_scheme="Default">
+  <option name="FONT_SCALE" value="1.0" />
+  <option name="LINE_SPACING" value="1.2" />
+  <option name="EDITOR_FONT_SIZE" value="12" />
+  <option name="EDITOR_FONT_NAME" value="Monospaced" />
+  <option name="EDITOR_LIGATURES" value="true" />
   <colors>
     <option name="CARET_COLOR" value="fc0200" />
     <option name="CARET_ROW_COLOR" value="353436" />
@@ -56,7 +61,7 @@
     <option name="ANNOTATION_NAME_ATTRIBUTES" baseAttributes="DEFAULT_METADATA" />
     <option name="ANONYMOUS_CLASS_NAME_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="4bff" />
+        <option name="FOREGROUND" value="b6e5ff" />
         <option name="FONT_TYPE" value="1" />
       </value>
     </option>
@@ -126,6 +131,11 @@
       <value>
         <option name="FOREGROUND" value="4bff" />
         <option name="FONT_TYPE" value="1" />
+      </value>
+    </option>
+    <option name="CONSTRUCTOR_DECLARATION_ATTRIBUTES">
+      <value>
+        <option name="FOREGROUND" value="4bff" />
       </value>
     </option>
     <option name="CSS.COMMENT">
@@ -404,7 +414,7 @@
     </option>
     <option name="ENUM_NAME_ATTRIBUTES">
       <value>
-        <option name="FOREGROUND" value="4bff" />
+        <option name="FOREGROUND" value="6bf5ff" />
         <option name="FONT_TYPE" value="1" />
       </value>
     </option>
@@ -1272,7 +1282,11 @@
         <option name="FOREGROUND" value="db00ff" />
       </value>
     </option>
-    <option name="STATIC_FIELD_ATTRIBUTES" baseAttributes="DEFAULT_STATIC_FIELD" />
+    <option name="STATIC_FIELD_ATTRIBUTES">
+      <value>
+        <option name="FOREGROUND" value="fff400" />
+      </value>
+    </option>
     <option name="STATIC_FINAL_FIELD_ATTRIBUTES">
       <value>
         <option name="FOREGROUND" value="ff8bd7" />
