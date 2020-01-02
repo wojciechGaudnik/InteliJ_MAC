@@ -1,10 +1,23 @@
 <application>
   <component name="FileTypeManager" version="17">
-    <ignoreFiles list="*$py.class;*.hprof;*.pyc;*.pyo;*.rbc;*.yarb;*~;.DS_Store;.git;.hg;.svn;CVS;__pycache__;_svn;vssver.scc;vssver2.scc;" />
     <extensionMap>
-      <mapping pattern="origin" type="PLAIN_TEXT" />
-      <mapping pattern="hangman_graf" type="PLAIN_TEXT" />
-      <mapping ext="p" type="PLAIN_TEXT" />
+      <mapping pattern="JavaTutorial" type="CLASS" />
+      <mapping ext="tps" type="DBN-PSQL" />
+      <mapping ext="trg" type="DBN-PSQL" />
+      <mapping ext="pks" type="DBN-PSQL" />
+      <mapping ext="prc" type="DBN-PSQL" />
+      <mapping ext="fnc" type="DBN-PSQL" />
+      <mapping ext="tpb" type="DBN-PSQL" />
+      <mapping ext="pkg" type="DBN-PSQL" />
+      <mapping ext="pkb" type="DBN-PSQL" />
+      <mapping ext="tpe" type="DBN-PSQL" />
+      <mapping ext="vw" type="DBN-SQL" />
+      <mapping pattern="*.js.flow" type="Flow" />
+      <mapping pattern="*.js.flow" type="Flow" />
+      <mapping pattern="HelloWorld" type="JAVA" />
+      <mapping pattern="Tutorial" type="JAVA" />
+      <mapping ext="gradle.kts" type="Kotlin" />
+      <mapping pattern="data-postgres" type="SQL" />
     </extensionMap>
   </component>
 </application>
