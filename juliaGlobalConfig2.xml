@@ -1,0 +1,5 @@
+<application>
+  <component name="JuliaGlobalSettings2">
+    <option name="allJuliaExePath" value="/usr/bin/julia" />
+  </component>
+</application>
