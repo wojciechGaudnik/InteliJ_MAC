@@ -265,6 +265,12 @@
         <option name="FOREGROUND" value="4bff" />
       </value>
     </option>
+    <option name="DEFAULT_CONSTANT">
+      <value>
+        <option name="FOREGROUND" value="ff8bd7" />
+        <option name="FONT_TYPE" value="3" />
+      </value>
+    </option>
     <option name="DEFAULT_FUNCTION_CALL">
       <value>
         <option name="FOREGROUND" value="ff5a01" />
@@ -531,6 +537,9 @@
         <option name="FONT_TYPE" value="1" />
       </value>
     </option>
+    <option name="HTML_CODE">
+      <value />
+    </option>
     <option name="HTML_ENTITY_REFERENCE">
       <value>
         <option name="FOREGROUND" value="a8885a" />
@@ -647,7 +656,7 @@
     </option>
     <option name="MATCHED_BRACE_ATTRIBUTES">
       <value>
-        <option name="BACKGROUND" value="ff00" />
+        <option name="BACKGROUND" value="3b514d" />
         <option name="FONT_TYPE" value="1" />
       </value>
     </option>
