@@ -660,9 +660,19 @@
         <option name="FONT_TYPE" value="1" />
       </value>
     </option>
+    <option name="NASM_NUMBER">
+      <value>
+        <option name="FOREGROUND" value="a8885a" />
+      </value>
+    </option>
     <option name="NOT_USED_ELEMENT_ATTRIBUTES">
       <value>
         <option name="FOREGROUND" value="80807f" />
+      </value>
+    </option>
+    <option name="OC.NUMBER">
+      <value>
+        <option name="FOREGROUND" value="a8885a" />
       </value>
     </option>
     <option name="PY.BUILTIN_NAME">
