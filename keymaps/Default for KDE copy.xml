@@ -1,4 +1,8 @@
 <keymap version="1" name="Default for KDE copy" parent="Default for KDE">
+  <action id="Debug">
+    <keyboard-shortcut first-keystroke="shift f9" />
+    <keyboard-shortcut first-keystroke="shift alt d" />
+  </action>
   <action id="Run">
     <keyboard-shortcut first-keystroke="shift f10" />
     <keyboard-shortcut first-keystroke="shift alt x" />
@@ -16,4 +20,5 @@
   </action>
   <action id="context.clear" />
   <action id="context.save" />
+  <action id="hg4idea.QFold" />
 </keymap>
