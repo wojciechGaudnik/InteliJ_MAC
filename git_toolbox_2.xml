@@ -1,9 +1,5 @@
 <application>
   <component name="GitToolBoxAppSettings2">
-    <option name="showStatusWidget" value="false" />
-    <option name="showProjectViewStatus" value="false" />
-    <option name="showBlameWidget" value="false" />
-    <option name="showEditorInlineBlame" value="false" />
     <option name="decorationParts">
       <list>
         <DecorationPartConfig>
@@ -23,5 +19,7 @@
       </list>
     </option>
     <option name="previousVersionMigrated" value="true" />
+    <option name="showProjectViewStatus" value="false" />
+    <option name="showStatusWidget" value="false" />
   </component>
 </application>
