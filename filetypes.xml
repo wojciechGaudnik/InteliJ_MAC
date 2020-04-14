@@ -1,0 +1,13 @@
+<application>
+  <component name="FileTypeManager" version="17">
+    <extensionMap>
+      <mapping pattern="JavaTutorial" type="CLASS" />
+      <mapping pattern="HelloWorld" type="JAVA" />
+      <mapping pattern="Tutorial" type="JAVA" />
+      <mapping ext="main.kts" type="Kotlin" />
+      <mapping ext="gradle.kts" type="Kotlin" />
+      <mapping pattern="data-postgres" type="SQL" />
+      <removed_mapping ext="tps" approved="true" type="TPS File" />
+    </extensionMap>
+  </component>
+</application>
