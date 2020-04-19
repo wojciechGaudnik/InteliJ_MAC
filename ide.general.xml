@@ -19,6 +19,14 @@
     <entry key="ide.win.frame.decoration" value="true" />
     <entry key="debugger.watches.in.variables" value="false" />
     <entry key="ide.balloon.shadow.size" value="0" />
+    <entry key="ide.borderless.title.debug" value="true" />
+    <entry key="ide.title.debug" value="true" />
+    <entry key="debugger.new.debug.tool.window.view" value="true" />
+    <entry key="ide.tooltip.showAllSeverities" value="true" />
+    <entry key="show.diff.preview.as.editor.tab.with.single.click" value="true" />
+    <entry key="show.log.as.editor.tab" value="false" />
+    <entry key="show.diff.preview.as.editor.tab" value="true" />
+    <entry key="vcs.log.show.diff.preview.as.editor.tab" value="true" />
     <entry key="rider.enable.designer.winForms" value="true" />
   </component>
 </application>
