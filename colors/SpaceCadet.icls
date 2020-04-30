@@ -6,7 +6,7 @@
   <option name="EDITOR_LIGATURES" value="true" />
   <colors>
     <option name="CARET_COLOR" value="fc0200" />
-    <option name="CARET_ROW_COLOR" value="353436" />
+    <option name="CARET_ROW_COLOR" value="29081a" />
     <option name="CONSOLE_BACKGROUND_KEY" value="80b0c" />
     <option name="DIAGRAM_ANNOTATION_EDGE" value="3c3f41" />
     <option name="DIAGRAM_DEFAULT_EDGE" value="3c3f41" />
@@ -57,8 +57,8 @@
         <option name="FOREGROUND" value="db00ff" />
       </value>
     </option>
-    <option name="ANNOTATION_ATTRIBUTE_NAME_ATTRIBUTES" baseAttributes="" />
-    <option name="ANNOTATION_NAME_ATTRIBUTES" baseAttributes="" />
+    <option name="ANNOTATION_ATTRIBUTE_NAME_ATTRIBUTES" baseAttributes="DEFAULT_METADATA" />
+    <option name="ANNOTATION_NAME_ATTRIBUTES" baseAttributes="DEFAULT_METADATA" />
     <option name="ANONYMOUS_CLASS_NAME_ATTRIBUTES">
       <value>
         <option name="FOREGROUND" value="b6e5ff" />
@@ -358,9 +358,7 @@
       </value>
     </option>
     <option name="DEFAULT_TEMPLATE_LANGUAGE_COLOR">
-      <value>
-        <option name="BACKGROUND" value="ff5400" />
-      </value>
+      <value />
     </option>
     <option name="DEPRECATED_ATTRIBUTES">
       <value>
@@ -563,7 +561,7 @@
         <option name="ERROR_STRIPE_COLOR" value="ccccff" />
       </value>
     </option>
-    <option name="IMPLICIT_ANONYMOUS_CLASS_PARAMETER_ATTRIBUTES" baseAttributes="" />
+    <option name="IMPLICIT_ANONYMOUS_CLASS_PARAMETER_ATTRIBUTES" baseAttributes="CLASS_NAME_ATTRIBUTES" />
     <option name="INFO_ATTRIBUTES">
       <value>
         <option name="EFFECT_COLOR" value="333434" />
@@ -582,7 +580,7 @@
         <option name="BACKGROUND" value="ededed" />
       </value>
     </option>
-    <option name="INSTANCE_FIELD_ATTRIBUTES" baseAttributes="" />
+    <option name="INSTANCE_FIELD_ATTRIBUTES" baseAttributes="DEFAULT_INSTANCE_FIELD" />
     <option name="INSTANCE_FINAL_FIELD_ATTRIBUTES">
       <value>
         <option name="FOREGROUND" value="ff8bd7" />
@@ -610,11 +608,6 @@
     <option name="JS.LOCAL_VARIABLE" baseAttributes="DEFAULT_LOCAL_VARIABLE" />
     <option name="JS.PARAMETER" baseAttributes="DEFAULT_PARAMETER" />
     <option name="JS.REGEXP" baseAttributes="DEFAULT_STRING" />
-    <option name="KOTLIN_FUNCTION_LITERAL_BRACES_AND_ARROW">
-      <value>
-        <option name="FONT_TYPE" value="1" />
-      </value>
-    </option>
     <option name="KOTLIN_LABEL">
       <value />
     </option>
