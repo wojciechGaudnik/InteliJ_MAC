@@ -13,7 +13,4 @@
     <option name="namespaceQualification" value="Always" />
     <option name="tableQualification" value="Always" />
   </component>
-  <component name="TodoConfiguration">
-    <pattern pattern="\b(todo|fixme)\b.*" />
-  </component>
 </application>
