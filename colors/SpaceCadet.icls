@@ -4,6 +4,10 @@
   <option name="EDITOR_FONT_SIZE" value="12" />
   <option name="EDITOR_FONT_NAME" value="Monospaced" />
   <option name="EDITOR_LIGATURES" value="true" />
+  <option name="CONSOLE_FONT_NAME" value="Hack Nerd Font" />
+  <option name="CONSOLE_FONT_SIZE" value="11" />
+  <option name="CONSOLE_LIGATURES" value="true" />
+  <option name="CONSOLE_LINE_SPACING" value="1.0" />
   <colors>
     <option name="CARET_COLOR" value="fc0200" />
     <option name="CARET_ROW_COLOR" value="353436" />
@@ -57,8 +61,8 @@
         <option name="FOREGROUND" value="db00ff" />
       </value>
     </option>
-    <option name="ANNOTATION_ATTRIBUTE_NAME_ATTRIBUTES" baseAttributes="" />
-    <option name="ANNOTATION_NAME_ATTRIBUTES" baseAttributes="" />
+    <option name="ANNOTATION_ATTRIBUTE_NAME_ATTRIBUTES" baseAttributes="DEFAULT_METADATA" />
+    <option name="ANNOTATION_NAME_ATTRIBUTES" baseAttributes="DEFAULT_METADATA" />
     <option name="ANONYMOUS_CLASS_NAME_ATTRIBUTES">
       <value>
         <option name="FOREGROUND" value="b6e5ff" />
@@ -104,6 +108,11 @@
     <option name="BUILDOUT.VALUE">
       <value>
         <option name="FOREGROUND" value="805978" />
+      </value>
+    </option>
+    <option name="CONSOLE_BLUE_OUTPUT">
+      <value>
+        <option name="FOREGROUND" value="4274ff" />
       </value>
     </option>
     <option name="CONSOLE_ERROR_OUTPUT">
@@ -358,9 +367,7 @@
       </value>
     </option>
     <option name="DEFAULT_TEMPLATE_LANGUAGE_COLOR">
-      <value>
-        <option name="BACKGROUND" value="ff5400" />
-      </value>
+      <value />
     </option>
     <option name="DEPRECATED_ATTRIBUTES">
       <value>
@@ -563,7 +570,7 @@
         <option name="ERROR_STRIPE_COLOR" value="ccccff" />
       </value>
     </option>
-    <option name="IMPLICIT_ANONYMOUS_CLASS_PARAMETER_ATTRIBUTES" baseAttributes="" />
+    <option name="IMPLICIT_ANONYMOUS_CLASS_PARAMETER_ATTRIBUTES" baseAttributes="CLASS_NAME_ATTRIBUTES" />
     <option name="INFO_ATTRIBUTES">
       <value>
         <option name="EFFECT_COLOR" value="333434" />
@@ -582,7 +589,7 @@
         <option name="BACKGROUND" value="ededed" />
       </value>
     </option>
-    <option name="INSTANCE_FIELD_ATTRIBUTES" baseAttributes="" />
+    <option name="INSTANCE_FIELD_ATTRIBUTES" baseAttributes="DEFAULT_INSTANCE_FIELD" />
     <option name="INSTANCE_FINAL_FIELD_ATTRIBUTES">
       <value>
         <option name="FOREGROUND" value="ff8bd7" />
@@ -610,11 +617,6 @@
     <option name="JS.LOCAL_VARIABLE" baseAttributes="DEFAULT_LOCAL_VARIABLE" />
     <option name="JS.PARAMETER" baseAttributes="DEFAULT_PARAMETER" />
     <option name="JS.REGEXP" baseAttributes="DEFAULT_STRING" />
-    <option name="KOTLIN_FUNCTION_LITERAL_BRACES_AND_ARROW">
-      <value>
-        <option name="FONT_TYPE" value="1" />
-      </value>
-    </option>
     <option name="KOTLIN_LABEL">
       <value />
     </option>
@@ -657,6 +659,11 @@
     <option name="LOCALE.STRING_LITERAL">
       <value>
         <option name="FOREGROUND" value="805978" />
+      </value>
+    </option>
+    <option name="LOG_VERBOSE_OUTPUT">
+      <value>
+        <option name="FOREGROUND" value="4bff" />
       </value>
     </option>
     <option name="MATCHED_BRACE_ATTRIBUTES">
