@@ -4,7 +4,7 @@
     <property name="created">2018-11-19T10:32:38</property>
     <property name="ide">Python</property>
     <property name="ideVersion">2018.2.5.0.0</property>
-    <property name="modified">2018-11-19T11:33:33</property>
+    <property name="modified">2018-11-19T10:43:09</property>
     <property name="originalScheme">SpaceCadet</property>
   </metaInfo>
   <option name="LINE_SPACING" value="1.0" />
@@ -23,11 +23,6 @@
     <option name="WHITESPACES" value="bfbfbf" />
   </colors>
   <attributes>
-    <option name="ABSTRACT_CLASS_NAME_ATTRIBUTES">
-      <value>
-        <option name="FOREGROUND" value="4bff" />
-      </value>
-    </option>
     <option name="BAD_CHARACTER">
       <value>
         <option name="BACKGROUND" value="5f0047" />
@@ -67,12 +62,6 @@
     <option name="BUILDOUT.VALUE">
       <value>
         <option name="FOREGROUND" value="805978" />
-      </value>
-    </option>
-    <option name="CLASS_NAME_ATTRIBUTES">
-      <value>
-        <option name="FOREGROUND" value="4bff" />
-        <option name="FONT_TYPE" value="1" />
       </value>
     </option>
     <option name="CONSOLE_ERROR_OUTPUT">
@@ -469,14 +458,6 @@
         <option name="FOREGROUND" value="473c45" />
       </value>
     </option>
-    <option name="JAVA_BRACES">
-      <value>
-        <option name="FOREGROUND" value="3c3f41" />
-      </value>
-    </option>
-    <option name="JAVA_BRACKETS">
-      <value />
-    </option>
     <option name="JAVA_DOC_COMMENT">
       <value>
         <option name="FOREGROUND" value="473c45" />
@@ -517,7 +498,6 @@
     <option name="JAVA_OPERATION_SIGN">
       <value>
         <option name="FOREGROUND" value="e64c00" />
-        <option name="FONT_TYPE" value="1" />
       </value>
     </option>
     <option name="JAVA_STRING">
@@ -677,17 +657,6 @@
     <option name="LOCALE.STRING_LITERAL">
       <value>
         <option name="FOREGROUND" value="805978" />
-      </value>
-    </option>
-    <option name="METHOD_CALL_ATTRIBUTES">
-      <value>
-        <option name="FOREGROUND" value="cfe200" />
-      </value>
-    </option>
-    <option name="METHOD_DECLARATION_ATTRIBUTES">
-      <value>
-        <option name="FOREGROUND" value="cfe200" />
-        <option name="FONT_TYPE" value="1" />
       </value>
     </option>
     <option name="NOT_USED_ELEMENT_ATTRIBUTES">
