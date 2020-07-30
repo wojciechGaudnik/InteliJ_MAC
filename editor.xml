@@ -8,6 +8,13 @@
   <component name="EditorSettings">
     <option name="SHOW_QUICK_DOC_ON_MOUSE_OVER_ELEMENT" value="false" />
   </component>
+  <component name="InlayHintsSettings">
+    <option name="disabledHintProviderIds">
+      <set>
+        <option value="JavaScript.js.type.hints" />
+      </set>
+    </option>
+  </component>
   <component name="SqlEditorOptions">
     <option name="aliasQualification" value="Always" />
     <option name="namespaceQualification" value="Always" />
