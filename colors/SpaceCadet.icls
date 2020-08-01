@@ -61,8 +61,8 @@
         <option name="FOREGROUND" value="db00ff" />
       </value>
     </option>
-    <option name="ANNOTATION_ATTRIBUTE_NAME_ATTRIBUTES" baseAttributes="DEFAULT_METADATA" />
-    <option name="ANNOTATION_NAME_ATTRIBUTES" baseAttributes="DEFAULT_METADATA" />
+    <option name="ANNOTATION_ATTRIBUTE_NAME_ATTRIBUTES" baseAttributes="" />
+    <option name="ANNOTATION_NAME_ATTRIBUTES" baseAttributes="" />
     <option name="ANONYMOUS_CLASS_NAME_ATTRIBUTES">
       <value>
         <option name="FOREGROUND" value="b6e5ff" />
@@ -570,7 +570,7 @@
         <option name="ERROR_STRIPE_COLOR" value="ccccff" />
       </value>
     </option>
-    <option name="IMPLICIT_ANONYMOUS_CLASS_PARAMETER_ATTRIBUTES" baseAttributes="CLASS_NAME_ATTRIBUTES" />
+    <option name="IMPLICIT_ANONYMOUS_CLASS_PARAMETER_ATTRIBUTES" baseAttributes="" />
     <option name="INFO_ATTRIBUTES">
       <value>
         <option name="EFFECT_COLOR" value="333434" />
@@ -589,7 +589,7 @@
         <option name="BACKGROUND" value="ededed" />
       </value>
     </option>
-    <option name="INSTANCE_FIELD_ATTRIBUTES" baseAttributes="DEFAULT_INSTANCE_FIELD" />
+    <option name="INSTANCE_FIELD_ATTRIBUTES" baseAttributes="" />
     <option name="INSTANCE_FINAL_FIELD_ATTRIBUTES">
       <value>
         <option name="FOREGROUND" value="ff8bd7" />
@@ -714,12 +714,12 @@
     </option>
     <option name="PY.FUNCTION_CALL">
       <value>
-        <option name="FOREGROUND" value="cfe200" />
+        <option name="FOREGROUND" value="ff5a01" />
       </value>
     </option>
     <option name="PY.FUNC_DEFINITION">
       <value>
-        <option name="FOREGROUND" value="cfe200" />
+        <option name="FOREGROUND" value="ff5a01" />
         <option name="FONT_TYPE" value="1" />
       </value>
     </option>
@@ -730,7 +730,7 @@
     </option>
     <option name="PY.KEYWORD">
       <value>
-        <option name="FOREGROUND" value="ff0053" />
+        <option name="FOREGROUND" value="ff0080" />
       </value>
     </option>
     <option name="PY.KEYWORD_ARGUMENT">
@@ -745,7 +745,7 @@
     </option>
     <option name="PY.METHOD_CALL">
       <value>
-        <option name="FOREGROUND" value="4bff" />
+        <option name="FOREGROUND" value="ff5a01" />
       </value>
     </option>
     <option name="PY.NUMBER">
@@ -769,7 +769,7 @@
     </option>
     <option name="PY.SELF_PARAMETER">
       <value>
-        <option name="FOREGROUND" value="ff0053" />
+        <option name="FOREGROUND" value="ff0080" />
         <option name="FONT_TYPE" value="2" />
       </value>
     </option>

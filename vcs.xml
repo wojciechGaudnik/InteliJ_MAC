@@ -14,6 +14,14 @@
           <option name="url" value="git@github.com:wojciechGaudnik/QuestStoreAPI.git" />
           <option name="userName" value="" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="git@github.com:wojciechGaudnik/Zadania-Rekrutacyjne.git" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="git@github.com:GoatsInBoats/Loylalty-Card-Wallet.git" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
     <option name="cloneParentDir" value="$USER_HOME$/Workspace" />
