@@ -22,14 +22,6 @@
           <option name="url" value="git@github.com:GoatsInBoats/Loylalty-Card-Wallet.git" />
           <option name="userName" value="" />
         </UrlAndUserName>
-        <UrlAndUserName>
-          <option name="url" value="git@github.com:Java-Techie-jt/spring-data-rest-example.git" />
-          <option name="userName" value="" />
-        </UrlAndUserName>
-        <UrlAndUserName>
-          <option name="url" value="git@github.com:spring-projects/spring-data-examples.git" />
-          <option name="userName" value="" />
-        </UrlAndUserName>
       </list>
     </option>
     <option name="cloneParentDir" value="$USER_HOME$/Workspace" />
