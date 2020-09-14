@@ -673,12 +673,6 @@
         <option name="FONT_TYPE" value="1" />
       </value>
     </option>
-    <option name="Map key">
-      <value>
-        <option name="FOREGROUND" value="a8885a" />
-        <option name="FONT_TYPE" value="3" />
-      </value>
-    </option>
     <option name="NASM_NUMBER">
       <value>
         <option name="FOREGROUND" value="a8885a" />
