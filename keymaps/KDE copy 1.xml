@@ -1,8 +1,6 @@
 <keymap version="1" name="KDE copy 1" parent="Default for KDE">
   <action id="ChooseRunConfiguration" />
-  <action id="Run" />
-  <action id="RunClass">
-    <keyboard-shortcut first-keystroke="shift ctrl f10" />
+  <action id="Run">
     <keyboard-shortcut first-keystroke="shift alt x" />
   </action>
   <action id="RunDashboard.Run">
