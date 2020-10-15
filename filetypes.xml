@@ -1,14 +1,19 @@
 <application>
-  <component name="FileTypeManager" version="17">
+  <component name="FileTypeManager" version="18">
     <extensionMap>
       <mapping pattern="JavaTutorial" type="CLASS" />
+      <mapping ext="csv" type="CSV" />
+      <removed_mapping ext="tsv" type="CSV/TSV" />
+      <removed_mapping ext="csv" type="CSV/TSV" />
       <mapping pattern="HelloWorld" type="JAVA" />
       <mapping pattern="Tutorial" type="JAVA" />
-      <mapping ext="main.kts" type="Kotlin" />
-      <mapping ext="gradle.kts" type="Kotlin" />
       <mapping ext="npy" type="PLAIN_TEXT" />
       <mapping pattern="data-postgres" type="SQL" />
+      <mapping ext="tsv" type="TSV" />
+      <removed_mapping ext="chm" approved="true" type="Native" />
       <removed_mapping ext="tps" approved="true" type="TPS File" />
+      <mapping ext="gradle.kts" type="Kotlin" />
+      <mapping ext="main.kts" type="Kotlin" />
     </extensionMap>
   </component>
 </application>
