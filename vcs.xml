@@ -38,8 +38,12 @@
           <option name="url" value="http://gitlab.enigma.com.pl" />
           <option name="userName" value="wgaudnik" />
         </UrlAndUserName>
+        <UrlAndUserName>
+          <option name="url" value="https://github.com/SoftwarePlant-com/recruitment-task.git" />
+          <option name="userName" value="" />
+        </UrlAndUserName>
       </list>
     </option>
-    <option name="cloneParentDir" value="/mnt/USB_DISK/enigma/Workspace" />
+    <option name="cloneParentDir" value="$USER_HOME$/Workspace" />
   </component>
 </application>
