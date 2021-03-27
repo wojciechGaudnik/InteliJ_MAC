@@ -1,16 +1,22 @@
 <keymap version="1" name="KDE copy 1" parent="Default for KDE">
   <action id="ChooseRunConfiguration" />
+  <action id="OptimizeImports">
+    <keyboard-shortcut first-keystroke="ctrl alt o" />
+    <keyboard-shortcut first-keystroke="shift alt o" />
+  </action>
   <action id="Run">
     <keyboard-shortcut first-keystroke="shift alt x" />
   </action>
   <action id="RunDashboard.Run">
     <keyboard-shortcut first-keystroke="shift ctrl f10" />
   </action>
+  <action id="SelectVirtualTemplateElement" />
   <action id="ServiceView.ShowServices" />
   <action id="Stop">
     <keyboard-shortcut first-keystroke="ctrl 2" />
     <keyboard-shortcut first-keystroke="shift alt s" />
   </action>
   <action id="context.clear" />
+  <action id="context.load" />
   <action id="context.save" />
 </keymap>
