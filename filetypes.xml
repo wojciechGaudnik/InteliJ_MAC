@@ -4,6 +4,7 @@
       <mapping pattern="JavaTutorial" type="CLASS" />
       <mapping pattern="Tutorial" type="JAVA" />
       <mapping pattern="HelloWorld" type="JAVA" />
+      <mapping ext="space.kts" type="Kotlin" />
       <mapping ext="gradle.kts" type="Kotlin" />
       <mapping ext="main.kts" type="Kotlin" />
       <mapping ext="npy" type="PLAIN_TEXT" />
