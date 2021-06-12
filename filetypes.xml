@@ -8,6 +8,7 @@
       <mapping ext="gradle.kts" type="Kotlin" />
       <mapping ext="main.kts" type="Kotlin" />
       <mapping ext="npy" type="PLAIN_TEXT" />
+      <mapping ext="ser" type="PLAIN_TEXT" />
       <mapping pattern="data-postgres" type="SQL" />
       <mapping pattern="colorOf" type="TypeScript" />
       <removed_mapping ext="apk" approved="true" type="ARCHIVE" />
