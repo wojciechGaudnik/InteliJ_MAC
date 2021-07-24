@@ -7,9 +7,6 @@
   <action id="Run">
     <keyboard-shortcut first-keystroke="shift alt x" />
   </action>
-  <action id="RunDashboard.Run">
-    <keyboard-shortcut first-keystroke="shift ctrl f10" />
-  </action>
   <action id="SelectVirtualTemplateElement" />
   <action id="ServiceView.ShowServices" />
   <action id="Stop">
