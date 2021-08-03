@@ -1,13 +1,24 @@
 <keymap version="1" name="macOS copy" parent="Mac OS X 10.5+">
+  <action id="CollapseAllRegions">
+    <keyboard-shortcut first-keystroke="shift meta subtract" />
+    <keyboard-shortcut first-keystroke="shift meta minus" />
+    <keyboard-shortcut first-keystroke="shift ctrl subtract" />
+  </action>
   <action id="EditorCompleteStatement">
     <keyboard-shortcut first-keystroke="shift meta enter" />
     <keyboard-shortcut first-keystroke="shift ctrl enter" />
   </action>
+  <action id="EditorDeleteToWordEnd" />
   <action id="EditorLeft">
     <keyboard-shortcut first-keystroke="left" />
   </action>
   <action id="EditorRight">
     <keyboard-shortcut first-keystroke="right" />
+  </action>
+  <action id="ExpandAllRegions">
+    <keyboard-shortcut first-keystroke="shift meta add" />
+    <keyboard-shortcut first-keystroke="shift meta equals" />
+    <keyboard-shortcut first-keystroke="shift ctrl add" />
   </action>
   <action id="ExportToTextFile" />
   <action id="ExtractMethod">
@@ -34,8 +45,20 @@
     <mouse-shortcut keystroke="meta alt button1" />
     <keyboard-shortcut first-keystroke="ctrl h" />
   </action>
+  <action id="List-selectFirstRowExtendSelection" />
+  <action id="List-selectLastRowExtendSelection" />
   <action id="List-selectPreviousColumn">
     <keyboard-shortcut first-keystroke="left" />
+  </action>
+  <action id="MoveLineDown" />
+  <action id="MoveLineUp" />
+  <action id="MoveStatementDown">
+    <keyboard-shortcut first-keystroke="shift meta down" />
+    <keyboard-shortcut first-keystroke="shift alt down" />
+  </action>
+  <action id="MoveStatementUp">
+    <keyboard-shortcut first-keystroke="shift meta up" />
+    <keyboard-shortcut first-keystroke="shift alt up" />
   </action>
   <action id="NavBar-selectLeft">
     <keyboard-shortcut first-keystroke="left" />
@@ -53,6 +76,13 @@
     <keyboard-shortcut first-keystroke="ctrl r" />
     <keyboard-shortcut first-keystroke="shift alt x" />
   </action>
+  <action id="SafeDelete">
+    <keyboard-shortcut first-keystroke="meta delete" />
+    <keyboard-shortcut first-keystroke="alt delete" />
+  </action>
+  <action id="SearchEverywhere">
+    <keyboard-shortcut first-keystroke="shift ctrl a" />
+  </action>
   <action id="SelectVirtualTemplateElement" />
   <action id="TodoViewGroupByFlattenPackage" />
   <action id="Tree-selectParent">
@@ -62,5 +92,6 @@
   <action id="TypeHierarchyBase.BaseOnThisType" />
   <action id="UsageGrouping.FlattenModules" />
   <action id="Vcs.ToggleAmendCommitMode" />
+  <action id="XDebugger.MoveWatchDown" />
   <action id="context.clear" />
 </keymap>
