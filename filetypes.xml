@@ -1,11 +1,21 @@
 <application>
   <component name="FileTypeManager" version="18">
     <extensionMap>
+      <mapping pattern="JavaTutorial" type="CLASS" />
+      <mapping pattern="Tutorial" type="JAVA" />
+      <mapping pattern="HelloWorld" type="JAVA" />
       <mapping ext="space.kts" type="Kotlin" />
       <mapping ext="gradle.kts" type="Kotlin" />
       <mapping ext="main.kts" type="Kotlin" />
+      <mapping ext="npy" type="PLAIN_TEXT" />
+      <mapping ext="ser" type="PLAIN_TEXT" />
+      <mapping ext="lst" type="PLAIN_TEXT" />
+      <mapping pattern="data-postgres" type="SQL" />
+      <mapping pattern="colorOf" type="TypeScript" />
       <removed_mapping ext="apk" approved="true" type="ARCHIVE" />
+      <removed_mapping ext="chm" approved="true" type="Native" />
       <removed_mapping ext="psd" approved="true" type="Image" />
+      <removed_mapping ext="tps" approved="true" type="TPS File" />
     </extensionMap>
   </component>
 </application>

@@ -1,0 +1,29 @@
+<keymap version="1" name="KDE copy 1" parent="Default for KDE">
+  <action id="ChooseRunConfiguration" />
+  <action id="CollapseAllRegions">
+    <keyboard-shortcut first-keystroke="shift ctrl subtract" />
+    <keyboard-shortcut first-keystroke="shift ctrl minus" />
+    <keyboard-shortcut first-keystroke="shift alt subtract" />
+  </action>
+  <action id="ExpandAllRegions">
+    <keyboard-shortcut first-keystroke="shift ctrl add" />
+    <keyboard-shortcut first-keystroke="shift ctrl equals" />
+    <keyboard-shortcut first-keystroke="shift alt add" />
+  </action>
+  <action id="OptimizeImports">
+    <keyboard-shortcut first-keystroke="ctrl alt o" />
+    <keyboard-shortcut first-keystroke="shift alt o" />
+  </action>
+  <action id="Run">
+    <keyboard-shortcut first-keystroke="shift alt x" />
+  </action>
+  <action id="SelectVirtualTemplateElement" />
+  <action id="ServiceView.ShowServices" />
+  <action id="Stop">
+    <keyboard-shortcut first-keystroke="ctrl 2" />
+    <keyboard-shortcut first-keystroke="shift alt s" />
+  </action>
+  <action id="context.clear" />
+  <action id="context.load" />
+  <action id="context.save" />
+</keymap>

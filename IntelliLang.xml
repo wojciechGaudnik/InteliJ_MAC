@@ -1,0 +1,20 @@
+<application>
+  <component name="LanguageInjectionConfiguration">
+    <injection language="POSTGRES-SQL" injector-id="java">
+      <display-name>EntityManager.createQuery (javax.persistence)</display-name>
+      <place><![CDATA[psiParameter().ofMethod(0, psiMethod().withName("createQuery").withParameters("java.lang.String").definedInClass("javax.persistence.EntityManager"))]]></place>
+    </injection>
+    <injection language="PostgreSQL" injector-id="java">
+      <display-name>EntityManager.createQuery (javax.persistence)</display-name>
+      <place><![CDATA[psiParameter().ofMethod(0, psiMethod().withName("createQuery").withParameters("java.lang.String").definedInClass("javax.persistence.EntityManager"))]]></place>
+    </injection>
+    <injection language="JPAQL" injector-id="java">
+      <display-name>EntityManager.createQuery (javax.persistence)</display-name>
+      <place disabled="true"><![CDATA[psiParameter().ofMethod(0, psiMethod().withName("createQuery").withParameters("java.lang.String").definedInClass("javax.persistence.EntityManager"))]]></place>
+      <place><![CDATA[psiParameter().ofMethod(0, psiMethod().withName("createQuery").withParameters("java.lang.String", "java.lang.Class").definedInClass("javax.persistence.EntityManager"))]]></place>
+    </injection>
+    <injection language="JAVA" injector-id="sql">
+      <display-name>New SQL Injection</display-name>
+    </injection>
+  </component>
+</application>
