@@ -57,6 +57,12 @@
     <mouse-shortcut keystroke="meta alt button1" />
     <keyboard-shortcut first-keystroke="ctrl h" />
   </action>
+  <action id="GotoTypeDeclaration">
+    <keyboard-shortcut first-keystroke="shift meta b" />
+    <keyboard-shortcut first-keystroke="shift ctrl b" />
+    <mouse-shortcut keystroke="shift meta button1" />
+    <mouse-shortcut keystroke="control button1" />
+  </action>
   <action id="List-selectFirstRowExtendSelection" />
   <action id="List-selectLastRowExtendSelection" />
   <action id="List-selectPreviousColumn">
