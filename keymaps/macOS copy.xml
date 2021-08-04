@@ -46,6 +46,9 @@
     <keyboard-shortcut first-keystroke="shift meta f" />
     <keyboard-shortcut first-keystroke="ctrl f" />
   </action>
+  <action id="GotoAction">
+    <keyboard-shortcut first-keystroke="shift ctrl a" />
+  </action>
   <action id="GotoBookmark4" />
   <action id="GotoClass">
     <keyboard-shortcut first-keystroke="meta o" />
