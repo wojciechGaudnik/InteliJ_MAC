@@ -7,6 +7,9 @@
     <keyboard-shortcut first-keystroke="alt up" />
     <keyboard-shortcut first-keystroke="shift alt up" />
   </action>
+  <action id="CloseEditor">
+    <keyboard-shortcut first-keystroke="ctrl 4" />
+  </action>
   <action id="CollapseAllRegions">
     <keyboard-shortcut first-keystroke="shift meta subtract" />
     <keyboard-shortcut first-keystroke="shift meta minus" />
@@ -30,6 +33,7 @@
     <keyboard-shortcut first-keystroke="shift alt add" />
   </action>
   <action id="ExportToTextFile" />
+  <action id="GotoBookmark4" />
   <action id="GotoClass">
     <keyboard-shortcut first-keystroke="meta o" />
     <keyboard-shortcut first-keystroke="ctrl o" />
