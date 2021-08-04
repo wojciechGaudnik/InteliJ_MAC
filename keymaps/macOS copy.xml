@@ -79,11 +79,17 @@
   <action id="NavBar-selectLeft">
     <keyboard-shortcut first-keystroke="left" />
   </action>
+  <action id="NextTab">
+    <keyboard-shortcut first-keystroke="alt right" />
+  </action>
   <action id="OptimizeImports">
     <keyboard-shortcut first-keystroke="ctrl alt o" />
     <keyboard-shortcut first-keystroke="shift alt o" />
   </action>
   <action id="OverrideMethods" />
+  <action id="PreviousTab">
+    <keyboard-shortcut first-keystroke="alt left" />
+  </action>
   <action id="ReformatCode">
     <keyboard-shortcut first-keystroke="meta alt l" />
     <keyboard-shortcut first-keystroke="shift alt l" />
@@ -94,14 +100,6 @@
   </action>
   <action id="SelectVirtualTemplateElement" />
   <action id="SplitChooser" />
-  <action id="Terminal.MoveToolWindowTabLeft">
-    <keyboard-shortcut first-keystroke="shift meta alt left" />
-    <keyboard-shortcut first-keystroke="alt left" />
-  </action>
-  <action id="Terminal.MoveToolWindowTabRight">
-    <keyboard-shortcut first-keystroke="shift meta alt right" />
-    <keyboard-shortcut first-keystroke="alt right" />
-  </action>
   <action id="TodoViewGroupByFlattenPackage" />
   <action id="Tree-selectParent">
     <keyboard-shortcut first-keystroke="left" />
