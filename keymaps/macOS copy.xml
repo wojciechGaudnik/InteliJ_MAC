@@ -27,6 +27,12 @@
   <action id="EditorLeft">
     <keyboard-shortcut first-keystroke="left" />
   </action>
+  <action id="EditorNextWord">
+    <keyboard-shortcut first-keystroke="ctrl alt f" />
+  </action>
+  <action id="EditorPreviousWord">
+    <keyboard-shortcut first-keystroke="ctrl alt b" />
+  </action>
   <action id="EditorRight">
     <keyboard-shortcut first-keystroke="right" />
   </action>
@@ -88,6 +94,14 @@
   </action>
   <action id="SelectVirtualTemplateElement" />
   <action id="SplitChooser" />
+  <action id="Terminal.MoveToolWindowTabLeft">
+    <keyboard-shortcut first-keystroke="shift meta alt left" />
+    <keyboard-shortcut first-keystroke="alt left" />
+  </action>
+  <action id="Terminal.MoveToolWindowTabRight">
+    <keyboard-shortcut first-keystroke="shift meta alt right" />
+    <keyboard-shortcut first-keystroke="alt right" />
+  </action>
   <action id="TodoViewGroupByFlattenPackage" />
   <action id="Tree-selectParent">
     <keyboard-shortcut first-keystroke="left" />
