@@ -51,6 +51,11 @@
     <keyboard-shortcut first-keystroke="shift meta f" />
     <keyboard-shortcut first-keystroke="ctrl f" />
   </action>
+  <action id="Generate">
+    <keyboard-shortcut first-keystroke="meta n" />
+    <keyboard-shortcut first-keystroke="ctrl enter" />
+    <keyboard-shortcut first-keystroke="ctrl help" />
+  </action>
   <action id="GotoAction">
     <keyboard-shortcut first-keystroke="shift ctrl a" />
   </action>
