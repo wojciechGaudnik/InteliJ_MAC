@@ -1,4 +1,18 @@
 <keymap version="1" name="macOS copy" parent="Mac OS X 10.5+">
+  <action id="$Copy">
+    <keyboard-shortcut first-keystroke="meta c" />
+    <keyboard-shortcut first-keystroke="ctrl c" />
+  </action>
+  <action id="$Paste">
+    <keyboard-shortcut first-keystroke="meta v" />
+    <keyboard-shortcut first-keystroke="ctrl v" />
+  </action>
+  <action id="Arrangement.Alias.Rule.Add">
+    <keyboard-shortcut first-keystroke="meta n" />
+  </action>
+  <action id="Arrangement.Rule.Add">
+    <keyboard-shortcut first-keystroke="meta n" />
+  </action>
   <action id="Arrangement.Rule.Match.Condition.Move.Down">
     <keyboard-shortcut first-keystroke="alt down" />
     <keyboard-shortcut first-keystroke="shift alt down" />
@@ -20,8 +34,17 @@
     <keyboard-shortcut first-keystroke="meta divide" />
     <keyboard-shortcut first-keystroke="ctrl slash" />
   </action>
+  <action id="Console.Jdbc.Execute.2">
+    <keyboard-shortcut first-keystroke="ctrl enter" />
+  </action>
   <action id="Console.TableResult.EditValueMaximized">
     <keyboard-shortcut first-keystroke="shift enter" />
+  </action>
+  <action id="Editor Copy">
+    <keyboard-shortcut first-keystroke="ctrl c" />
+  </action>
+  <action id="Editor Paste">
+    <keyboard-shortcut first-keystroke="ctrl v" />
   </action>
   <action id="EditorCompleteStatement">
     <keyboard-shortcut first-keystroke="shift meta enter" />
@@ -53,7 +76,6 @@
   </action>
   <action id="Generate">
     <keyboard-shortcut first-keystroke="meta n" />
-    <keyboard-shortcut first-keystroke="ctrl enter" />
     <keyboard-shortcut first-keystroke="ctrl help" />
   </action>
   <action id="GotoAction">
@@ -83,6 +105,9 @@
   <action id="NavBar-selectLeft">
     <keyboard-shortcut first-keystroke="left" />
   </action>
+  <action id="NewElement">
+    <keyboard-shortcut first-keystroke="meta n" />
+  </action>
   <action id="NextTab">
     <keyboard-shortcut first-keystroke="alt right" />
   </action>
@@ -103,6 +128,9 @@
     <keyboard-shortcut first-keystroke="alt delete" />
   </action>
   <action id="SelectVirtualTemplateElement" />
+  <action id="ServiceView.AddService">
+    <keyboard-shortcut first-keystroke="meta n" />
+  </action>
   <action id="SplitChooser" />
   <action id="TodoViewGroupByFlattenPackage" />
   <action id="Tree-selectParent">
@@ -110,6 +138,10 @@
   </action>
   <action id="TypeHierarchy" />
   <action id="TypeHierarchyBase.BaseOnThisType" />
+  <action id="Uml.NewElement">
+    <keyboard-shortcut first-keystroke="meta n" />
+  </action>
   <action id="UsageGrouping.FlattenModules" />
+  <action id="Vcs.QuickListPopupAction" />
   <action id="XDebugger.MoveWatchDown" />
 </keymap>
