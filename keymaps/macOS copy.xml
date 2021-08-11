@@ -71,6 +71,10 @@
     <keyboard-shortcut first-keystroke="shift alt add" />
   </action>
   <action id="ExportToTextFile" />
+  <action id="ExtractMethod">
+    <keyboard-shortcut first-keystroke="meta alt m" />
+    <keyboard-shortcut first-keystroke="ctrl alt m" />
+  </action>
   <action id="FindInPath">
     <keyboard-shortcut first-keystroke="shift meta f" />
     <keyboard-shortcut first-keystroke="ctrl f" />
@@ -157,6 +161,7 @@
   </action>
   <action id="UsageGrouping.FlattenModules" />
   <action id="Vcs.QuickListPopupAction" />
+  <action id="Vcs.ToggleAmendCommitMode" />
   <action id="XDebugger.MoveWatchDown" />
   <action id="context.clear" />
 </keymap>
