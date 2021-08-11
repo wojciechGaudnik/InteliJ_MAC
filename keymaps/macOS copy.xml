@@ -10,16 +10,17 @@
   <action id="Arrangement.Alias.Rule.Add">
     <keyboard-shortcut first-keystroke="meta n" />
   </action>
+  <action id="Arrangement.Alias.Rule.Match.Condition.Move.Down">
+    <keyboard-shortcut first-keystroke="alt down" />
+  </action>
   <action id="Arrangement.Rule.Add">
     <keyboard-shortcut first-keystroke="meta n" />
   </action>
-  <action id="Arrangement.Rule.Match.Condition.Move.Down">
+  <action id="Arrangement.Rule.Group.Condition.Move.Down">
     <keyboard-shortcut first-keystroke="alt down" />
-    <keyboard-shortcut first-keystroke="shift alt down" />
   </action>
-  <action id="Arrangement.Rule.Match.Condition.Move.Up">
+  <action id="Arrangement.Rule.Group.Condition.Move.Up">
     <keyboard-shortcut first-keystroke="alt up" />
-    <keyboard-shortcut first-keystroke="shift alt up" />
   </action>
   <action id="CloseEditor">
     <keyboard-shortcut first-keystroke="ctrl 4" />
@@ -103,6 +104,14 @@
   </action>
   <action id="MoveLineDown" />
   <action id="MoveLineUp" />
+  <action id="MoveStatementDown">
+    <keyboard-shortcut first-keystroke="shift meta down" />
+    <keyboard-shortcut first-keystroke="shift alt down" />
+  </action>
+  <action id="MoveStatementUp">
+    <keyboard-shortcut first-keystroke="shift meta up" />
+    <keyboard-shortcut first-keystroke="shift alt up" />
+  </action>
   <action id="NavBar-selectLeft">
     <keyboard-shortcut first-keystroke="left" />
   </action>
