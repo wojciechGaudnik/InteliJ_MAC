@@ -79,6 +79,10 @@
     <keyboard-shortcut first-keystroke="meta f" />
     <keyboard-shortcut first-keystroke="ctrl f" />
   </action>
+  <action id="FindInPath">
+    <keyboard-shortcut first-keystroke="shift meta f" />
+    <keyboard-shortcut first-keystroke="ctrl f" />
+  </action>
   <action id="Generate">
     <keyboard-shortcut first-keystroke="meta n" />
     <keyboard-shortcut first-keystroke="ctrl help" />
