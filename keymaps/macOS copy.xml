@@ -75,8 +75,8 @@
     <keyboard-shortcut first-keystroke="meta alt m" />
     <keyboard-shortcut first-keystroke="ctrl alt m" />
   </action>
-  <action id="FindInPath">
-    <keyboard-shortcut first-keystroke="shift meta f" />
+  <action id="Find">
+    <keyboard-shortcut first-keystroke="meta f" />
     <keyboard-shortcut first-keystroke="ctrl f" />
   </action>
   <action id="Generate">
