@@ -1,6 +1,7 @@
 <application>
   <component name="FileTypeManager" version="18">
     <extensionMap>
+      <mapping pattern="RaturnPagingValidator" type="AUTO_DETECTED" />
       <mapping pattern="JavaTutorial" type="CLASS" />
       <mapping pattern="Tutorial" type="JAVA" />
       <mapping pattern="HelloWorld" type="JAVA" />
