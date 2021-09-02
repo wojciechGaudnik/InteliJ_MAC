@@ -17,5 +17,9 @@
   <component name="TodoConfiguration">
     <pattern pattern="\btodo\b.*" />
     <pattern pattern="\bfixme\b.*" />
+    <pattern pattern="WG" />
+    <filter name="WG">
+      <pattern index="2" />
+    </filter>
   </component>
 </application>
