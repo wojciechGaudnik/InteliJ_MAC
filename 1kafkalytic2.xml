@@ -13,5 +13,10 @@
         </entry>
       </map>
     </option>
+    <option name="config">
+      <map>
+        <entry key="progress_tip" value="shown" />
+      </map>
+    </option>
   </component>
 </application>
